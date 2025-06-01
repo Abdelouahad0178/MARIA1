@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Découvre le Monde des Animaux 🐾</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(135deg, #87CEEB, #98FB98);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2E8B57;
+            font-size: 3em;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            backdrop-filter: blur(10px);
+        }
+
+        .section h2 {
+            color: #FF6B6B;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .buttons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .animal-button {
+            background: linear-gradient(145deg, #FFE4E1, #FFA07A);
+            border: none;
+            border-radius: 15px;
+            padding: 20px;
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #8B4513;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .animal-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            background: linear-gradient(145deg, #FFA07A, #FF7F50);
+        }
+
+        .animal-button:active {
+            transform: translateY(-2px) scale(1.02);
+        }
+
+        .habitat-button {
+            background: linear-gradient(145deg, #E0F6FF, #87CEEB);
+            border: none;
+            border-radius: 15px;
+            padding: 20px;
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #2F4F4F;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .habitat-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            background: linear-gradient(145deg, #87CEEB, #4682B4);
+        }
+
+        .info-display {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 20px;
+            border-left: 5px solid #32CD32;
+            font-size: 1.2em;
+            line-height: 1.6;
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .emoji {
+            font-size: 1.5em;
+        }
+
+        .examples {
+            background: rgba(255, 248, 220, 0.9);
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 15px;
+            border: 2px solid #FFD700;
+        }
+
+        .examples h4 {
+            color: #FF8C00;
+            margin-bottom: 10px;
+        }
+
+        .animal-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .animal-tag {
+            background: #FFE4B5;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            border: 1px solid #DEB887;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+
+        .animal-tag:hover {
+            background: #FFD700;
+            transform: scale(1.1);
+            box-shadow: 0 3px 10px rgba(255, 215, 0, 0.4);
+        }
+
+        .animal-tag:active {
+            transform: scale(1.05);
+        }
+
+        .reset-button {
+            background: linear-gradient(145deg, #FF69B4, #FF1493);
+            border: none;
+            border-radius: 25px;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+            margin: 20px auto;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        .reset-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(255, 20, 147, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2em; }
+            .section h2 { font-size: 2em; }
+            .animal-button, .habitat-button { font-size: 1.1em; padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🐾 Découvre le Monde des Animaux 🐾</h1>
+        
+        <!-- Section Régimes Alimentaires -->
+        <div class="section">
+            <h2>🍃 Que mangent les animaux ? 🥩</h2>
+            <div class="buttons-grid">
+                <button class="animal-button" onclick="showDietInfo('herbivore')">
+                    <span class="emoji">🌿</span> Herbivores
+                </button>
+                <button class="animal-button" onclick="showDietInfo('carnivore')">
+                    <span class="emoji">🥩</span> Carnivores
+                </button>
+                <button class="animal-button" onclick="showDietInfo('omnivore')">
+                    <span class="emoji">🌿🥩</span> Omnivores
+                </button>
+            </div>
+            <div id="diet-info" class="info-display"></div>
+        </div>
+
+        <!-- Section Milieux de Vie -->
+        <div class="section">
+            <h2>🏞️ Où vivent les animaux ? 🌊</h2>
+            <div class="buttons-grid">
+                <button class="habitat-button" onclick="showHabitatInfo('terrestre')">
+                    <span class="emoji">🏔️</span> Terrestre
+                </button>
+                <button class="habitat-button" onclick="showHabitatInfo('aquatique')">
+                    <span class="emoji">🌊</span> Aquatique
+                </button>
+                <button class="habitat-button" onclick="showHabitatInfo('amphibie')">
+                    <span class="emoji">🐸</span> Terre et Eau
+                </button>
+                <button class="habitat-button" onclick="showHabitatInfo('aerien')">
+                    <span class="emoji">🦅</span> Aérien
+                </button>
+            </div>
+            <div id="habitat-info" class="info-display"></div>
+        </div>
+
+        <button class="reset-button" onclick="resetAll()">🔄 Recommencer</button>
+    </div>
+
+    <script>
+        // Données sur les régimes alimentaires
+        const dietData = {
+            herbivore: {
+                title: "🌿 Les Herbivores",
+                description: "Les herbivores sont des animaux qui mangent uniquement des plantes ! Ils ont des dents spéciales pour broyer les feuilles et l'herbe.",
+                examples: [
+                    {name: "Vache 🐄", audio: "La vache mange de l'herbe et fait meuh ! Elle donne du lait délicieux."},
+                    {name: "Lapin 🐰", audio: "Le lapin adore les carottes et l'herbe fraîche ! Il sautille partout."},
+                    {name: "Éléphant 🐘", audio: "L'éléphant mange des feuilles et des fruits avec sa trompe ! C'est le plus gros animal terrestre."},
+                    {name: "Girafe 🦒", audio: "La girafe mange les feuilles des arbres très hauts grâce à son long cou !"},
+                    {name: "Cheval 🐎", audio: "Le cheval mange du foin et de l'avoine ! Il galope très vite."},
+                    {name: "Mouton 🐑", audio: "Le mouton mange de l'herbe et fait bêê ! Il nous donne de la laine."},
+                    {name: "Cerf 🦌", audio: "Le cerf mange des feuilles et des pousses dans la forêt ! Il a de beaux bois."},
+                    {name: "Panda 🐼", audio: "Le panda mange du bambou toute la journée ! Il est noir et blanc et très mignon."}
+                ],
+                audio: "Les herbivores mangent seulement des plantes comme l'herbe, les feuilles et les fruits. Ils ont des dents plates pour bien mâcher leur nourriture végétale."
+            },
+            carnivore: {
+                title: "🥩 Les Carnivores",
+                description: "Les carnivores sont des animaux qui mangent d'autres animaux ! Ils ont des dents pointues et des griffes pour chasser.",
+                examples: [
+                    {name: "Lion 🦁", audio: "Le lion est le roi des animaux ! Il rugit très fort et chasse en groupe."},
+                    {name: "Tigre 🐅", audio: "Le tigre a de belles rayures noires et orange ! C'est un chasseur solitaire."},
+                    {name: "Loup 🐺", audio: "Le loup hurle à la lune ! Il vit en meute et chasse ensemble."},
+                    {name: "Aigle 🦅", audio: "L'aigle vole très haut dans le ciel ! Il a une vue perçante pour chasser."},
+                    {name: "Requin 🦈", audio: "Le requin nage dans l'océan ! Il a des dents très pointues."},
+                    {name: "Chat 🐱", audio: "Le chat fait miaou ! C'est un petit chasseur qui aime jouer."},
+                    {name: "Serpent 🐍", audio: "Le serpent rampe sans pattes ! Il peut être venimeux."},
+                    {name: "Crocodile 🐊", audio: "Le crocodile a de grosses dents ! Il vit dans l'eau et sur terre."}
+                ],
+                audio: "Les carnivores mangent d'autres animaux. Ils ont des dents pointues appelées canines et des griffes pour attraper leurs proies."
+            },
+            omnivore: {
+                title: "🌿🥩 Les Omnivores",
+                description: "Les omnivores mangent à la fois des plantes ET des animaux ! Comme nous, les humains !",
+                examples: [
+                    {name: "Ours 🐻", audio: "L'ours mange du poisson, des baies et du miel ! Il peut être très gros."},
+                    {name: "Cochon 🐷", audio: "Le cochon fait groin groin ! Il mange de tout et adore se rouler dans la boue."},
+                    {name: "Singe 🐒", audio: "Le singe mange des fruits et des insectes ! Il se balance de branche en branche."},
+                    {name: "Humain 👨", audio: "L'humain mange des légumes, des fruits et de la viande ! C'est toi et moi !"},
+                    {name: "Poule 🐓", audio: "La poule fait cot cot ! Elle mange des graines et des petits insectes."},
+                    {name: "Canard 🦆", audio: "Le canard fait coin coin ! Il mange des plantes aquatiques et de petits poissons."},
+                    {name: "Renard 🦊", audio: "Le renard est rusé ! Il mange des petits animaux et des baies."},
+                    {name: "Raton laveur 🦝", audio: "Le raton laveur lave sa nourriture ! Il mange des fruits et des petits animaux."}
+                ],
+                audio: "Les omnivores mangent de tout : des plantes et des animaux ! Ils ont des dents variées pour manger différents types d'aliments."
+            }
+        };
+
+        // Données sur les habitats
+        const habitatData = {
+            terrestre: {
+                title: "🏔️ Les Animaux Terrestres",
+                description: "Ces animaux vivent sur la terre ferme ! Ils marchent, courent ou rampent sur le sol.",
+                examples: [
+                    {name: "Lion 🦁", audio: "Le lion vit dans la savane africaine ! Il court très vite sur ses quatre pattes."},
+                    {name: "Éléphant 🐘", audio: "L'éléphant marche lentement dans la savane ! Ses grosses pattes font beaucoup de bruit."},
+                    {name: "Cheval 🐎", audio: "Le cheval galope dans les prairies ! Il a quatre sabots qui font clap clap."},
+                    {name: "Serpent 🐍", audio: "Le serpent rampe sur le sol sans pattes ! Il ondule comme une vague."},
+                    {name: "Fourmi 🐜", audio: "La fourmi marche avec ses six petites pattes ! Elle travaille en équipe."},
+                    {name: "Lapin 🐰", audio: "Le lapin sautille sur ses pattes arrière ! Il court très vite pour échapper aux dangers."},
+                    {name: "Ours 🐻", audio: "L'ours marche dans la forêt ! Il peut se dresser sur ses pattes arrière."},
+                    {name: "Girafe 🦒", audio: "La girafe marche avec élégance dans la savane ! Ses longues pattes l'aident à être très grande."}
+                ],
+                audio: "Les animaux terrestres vivent sur la terre. Ils ont des pattes, des sabots ou rampent pour se déplacer sur le sol."
+            },
+            aquatique: {
+                title: "🌊 Les Animaux Aquatiques",
+                description: "Ces animaux vivent dans l'eau ! Ils nagent dans les océans, les rivières ou les lacs.",
+                examples: [
+                    {name: "Poisson 🐟", audio: "Le poisson nage avec ses nageoires ! Il respire sous l'eau avec ses branchies."},
+                    {name: "Requin 🦈", audio: "Le requin nage très vite dans l'océan ! C'est un grand prédateur des mers."},
+                    {name: "Baleine 🐋", audio: "La baleine est énorme et nage dans l'océan ! Elle chante de belles mélodies."},
+                    {name: "Dauphin 🐬", audio: "Le dauphin saute hors de l'eau ! Il est très intelligent et amical."},
+                    {name: "Pieuvre 🐙", audio: "La pieuvre a huit tentacules ! Elle peut changer de couleur pour se cacher."},
+                    {name: "Méduse 🪼", audio: "La méduse flotte dans l'eau comme un parapluie ! Attention, elle peut piquer."},
+                    {name: "Crabe 🦀", audio: "Le crabe marche de côté ! Il a de grosses pinces pour se défendre."},
+                    {name: "Étoile de mer ⭐", audio: "L'étoile de mer a cinq bras ! Elle peut les faire repousser si elle les perd."}
+                ],
+                audio: "Les animaux aquatiques vivent dans l'eau. Ils ont des nageoires, des branchies pour respirer sous l'eau."
+            },
+            amphibie: {
+                title: "🐸 Les Animaux Amphibies",
+                description: "Ces animaux vivent à la fois sur terre ET dans l'eau ! Ils peuvent respirer dans les deux milieux.",
+                examples: [
+                    {name: "Grenouille 🐸", audio: "La grenouille fait coâ coâ ! Elle saute sur terre et nage dans l'eau."},
+                    {name: "Crapaud 🐸", audio: "Le crapaud a la peau rugueuse ! Il vit près des mares et des étangs."},
+                    {name: "Salamandre 🦎", audio: "La salamandre ressemble à un petit lézard ! Elle aime les endroits humides."},
+                    {name: "Triton 🦎", audio: "Le triton a une belle queue pour nager ! Il change de forme en grandissant."},
+                    {name: "Hippopotame 🦛", audio: "L'hippopotame passe ses journées dans l'eau ! Il est très gros et peut être dangereux."},
+                    {name: "Castor 🦫", audio: "Le castor construit des barrages ! Il nage bien et coupe les arbres avec ses dents."},
+                    {name: "Loutre 🦦", audio: "La loutre nage sur le dos ! Elle est très joueuse et mange des poissons."},
+                    {name: "Tortue 🐢", audio: "La tortue nage dans l'eau et marche sur terre ! Elle porte sa maison sur son dos."}
+                ],
+                audio: "Les animaux amphibies vivent sur terre et dans l'eau. Ils peuvent respirer avec leurs poumons et leur peau."
+            },
+            aerien: {
+                title: "🦅 Les Animaux Aériens",
+                description: "Ces animaux volent dans le ciel ! Ils ont des ailes pour se déplacer dans les airs.",
+                examples: [
+                    {name: "Oiseau 🐦", audio: "L'oiseau chante de belles mélodies ! Il vole avec ses ailes et construit des nids."},
+                    {name: "Aigle 🦅", audio: "L'aigle plane très haut dans le ciel ! Il a une vue perçante pour repérer ses proies."},
+                    {name: "Papillon 🦋", audio: "Le papillon a de belles ailes colorées ! Il butine les fleurs avec sa trompe."},
+                    {name: "Chauve-souris 🦇", audio: "La chauve-souris vole la nuit ! Elle se guide avec les sons qu'elle émet."},
+                    {name: "Abeille 🐝", audio: "L'abeille fait bzz bzz ! Elle fabrique du miel délicieux et pollinise les fleurs."},
+                    {name: "Libellule 🪲", audio: "La libellule a quatre ailes transparentes ! Elle vole très vite au-dessus de l'eau."},
+                    {name: "Hibou 🦉", audio: "Le hibou fait hou hou dans la nuit ! Il tourne sa tête presque complètement."},
+                    {name: "Colibri 🐦", audio: "Le colibri bat des ailes très vite ! Il peut voler en arrière et boire le nectar des fleurs."}
+                ],
+                audio: "Les animaux aériens volent dans le ciel. Ils ont des ailes et des os légers pour pouvoir voler facilement."
+            }
+        };
+
+        function speakAnimal(animalData) {
+            speakText(animalData.audio);
+        }
+
+        function speakText(text) {
+            if ('speechSynthesis' in window) {
+                // Arrêter toute synthèse vocale en cours
+                speechSynthesis.cancel();
+                
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'fr-FR';
+                utterance.rate = 0.8;
+                utterance.pitch = 1.2;
+                utterance.volume = 1;
+                
+                speechSynthesis.speak(utterance);
+            }
+        }
+
+        function showDietInfo(type) {
+            const info = dietData[type];
+            const displayDiv = document.getElementById('diet-info');
+            
+            displayDiv.innerHTML = `
+                <h3>${info.title}</h3>
+                <p>${info.description}</p>
+                <div class="examples">
+                    <h4>🌟 Exemples d'animaux (clique pour écouter) :</h4>
+                    <div class="animal-list">
+                        ${info.examples.map(animal => `<span class="animal-tag" onclick="speakAnimal({audio: '${animal.audio.replace(/'/g, "\\'")}'})">${animal.name}</span>`).join('')}
+                    </div>
+                </div>
+            `;
+            
+            displayDiv.style.display = 'block';
+            speakText(info.audio);
+            
+            // Animation d'apparition
+            displayDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        function showHabitatInfo(type) {
+            const info = habitatData[type];
+            const displayDiv = document.getElementById('habitat-info');
+            
+            displayDiv.innerHTML = `
+                <h3>${info.title}</h3>
+                <p>${info.description}</p>
+                <div class="examples">
+                    <h4>🌟 Exemples d'animaux (clique pour écouter) :</h4>
+                    <div class="animal-list">
+                        ${info.examples.map(animal => `<span class="animal-tag" onclick="speakAnimal({audio: '${animal.audio.replace(/'/g, "\\'")}'})">${animal.name}</span>`).join('')}
+                    </div>
+                </div>
+            `;
+            
+            displayDiv.style.display = 'block';
+            speakText(info.audio);
+            
+            // Animation d'apparition
+            displayDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        function resetAll() {
+            document.getElementById('diet-info').style.display = 'none';
+            document.getElementById('habitat-info').style.display = 'none';
+            speechSynthesis.cancel();
+            
+            // Message d'encouragement
+            setTimeout(() => {
+                speakText("Bravo ! Tu peux maintenant découvrir d'autres animaux en cliquant sur les boutons colorés !");
+            }, 500);
+        }
+
+        // Message de bienvenue au chargement
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                speakText("Bienvenue dans le monde fantastique des animaux ! Clique sur les boutons colorés pour découvrir leurs secrets !");
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
