@@ -5,60 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Découvre le Monde des Animaux 🐾</title>
     <style>
-        :root {
-            /* Mode Clair */
-            --bg-gradient: linear-gradient(135deg, #87CEEB, #98FB98);
-            --section-bg: rgba(255, 255, 255, 0.9);
-            --title-color: #2E8B57;
-            --heading-color: #FF6B6B;
-            --text-color: #333;
-            --animal-button-bg: linear-gradient(145deg, #FFE4E1, #FFA07A);
-            --animal-button-hover: linear-gradient(145deg, #FFA07A, #FF7F50);
-            --animal-button-text: #8B4513;
-            --habitat-button-bg: linear-gradient(145deg, #E0F6FF, #87CEEB);
-            --habitat-button-hover: linear-gradient(145deg, #87CEEB, #4682B4);
-            --habitat-button-text: #2F4F4F;
-            --info-bg: rgba(255, 255, 255, 0.8);
-            --info-border: #32CD32;
-            --examples-bg: rgba(255, 248, 220, 0.9);
-            --examples-border: #FFD700;
-            --examples-heading: #FF8C00;
-            --tag-bg: #FFE4B5;
-            --tag-hover: #FFD700;
-            --tag-border: #DEB887;
-            --reset-button-bg: linear-gradient(145deg, #FF69B4, #FF1493);
-            --box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-            --toggle-bg: #ddd;
-            --toggle-slider: #fff;
-        }
-
-        [data-theme="dark"] {
-            /* Mode Sombre */
-            --bg-gradient: linear-gradient(135deg, #1a1a2e, #16213e);
-            --section-bg: rgba(30, 30, 50, 0.9);
-            --title-color: #64ffda;
-            --heading-color: #ff6b9d;
-            --text-color: #e0e0e0;
-            --animal-button-bg: linear-gradient(145deg, #3d2f42, #5a4a6a);
-            --animal-button-hover: linear-gradient(145deg, #5a4a6a, #6b5b7b);
-            --animal-button-text: #ffb347;
-            --habitat-button-bg: linear-gradient(145deg, #2a3f5f, #3d5a8a);
-            --habitat-button-hover: linear-gradient(145deg, #3d5a8a, #4e6b9a);
-            --habitat-button-text: #87ceeb;
-            --info-bg: rgba(40, 40, 60, 0.9);
-            --info-border: #64ffda;
-            --examples-bg: rgba(50, 50, 70, 0.9);
-            --examples-border: #ffd700;
-            --examples-heading: #ffb347;
-            --tag-bg: #4a4a6a;
-            --tag-hover: #5a5a7a;
-            --tag-border: #6a6a8a;
-            --reset-button-bg: linear-gradient(145deg, #d946ef, #a855f7);
-            --box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-            --toggle-bg: #4a4a6a;
-            --toggle-slider: #64ffda;
-        }
-
         * {
             margin: 0;
             padding: 0;
@@ -67,99 +13,22 @@
 
         body {
             font-family: 'Comic Sans MS', cursive, sans-serif;
-            background: var(--bg-gradient);
+            background: linear-gradient(135deg, #87CEEB, #98FB98);
             min-height: 100vh;
             padding: 20px;
-            color: var(--text-color);
-            transition: all 0.3s ease;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            position: relative;
-        }
-
-        /* Toggle Mode Sombre */
-        .theme-toggle {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            z-index: 1000;
-            background: var(--section-bg);
-            border-radius: 25px;
-            padding: 10px 15px;
-            box-shadow: var(--box-shadow);
-            backdrop-filter: blur(10px);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            border: 2px solid var(--info-border);
-        }
-
-        .theme-toggle-label {
-            font-size: 0.9em;
-            font-weight: bold;
-            color: var(--text-color);
-        }
-
-        .switch {
-            position: relative;
-            display: inline-block;
-            width: 60px;
-            height: 30px;
-        }
-
-        .switch input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-
-        .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: var(--toggle-bg);
-            transition: .4s;
-            border-radius: 30px;
-        }
-
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 22px;
-            width: 22px;
-            left: 4px;
-            bottom: 4px;
-            background-color: var(--toggle-slider);
-            transition: .4s;
-            border-radius: 50%;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        }
-
-        input:checked + .slider {
-            background-color: var(--info-border);
-        }
-
-        input:checked + .slider:before {
-            transform: translateX(30px);
-        }
-
-        .theme-icon {
-            font-size: 1.5em;
-            transition: all 0.3s ease;
         }
 
         h1 {
             text-align: center;
-            color: var(--title-color);
+            color: #2E8B57;
             font-size: 3em;
             margin-bottom: 30px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
             animation: bounce 2s infinite;
         }
 
@@ -170,18 +39,16 @@
         }
 
         .section {
-            background: var(--section-bg);
+            background: rgba(255, 255, 255, 0.9);
             border-radius: 20px;
             padding: 30px;
             margin-bottom: 30px;
-            box-shadow: var(--box-shadow);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
         }
 
         .section h2 {
-            color: var(--heading-color);
+            color: #FF6B6B;
             font-size: 2.5em;
             margin-bottom: 20px;
             text-align: center;
@@ -195,27 +62,26 @@
         }
 
         .animal-button {
-            background: var(--animal-button-bg);
+            background: linear-gradient(145deg, #FFE4E1, #FFA07A);
             border: none;
             border-radius: 15px;
             padding: 20px;
             font-size: 1.3em;
             font-weight: bold;
-            color: var(--animal-button-text);
+            color: #8B4513;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .animal-button:hover {
             transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-            background: var(--animal-button-hover);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            background: linear-gradient(145deg, #FFA07A, #FF7F50);
         }
 
         .animal-button:active {
@@ -223,40 +89,38 @@
         }
 
         .habitat-button {
-            background: var(--habitat-button-bg);
+            background: linear-gradient(145deg, #E0F6FF, #87CEEB);
             border: none;
             border-radius: 15px;
             padding: 20px;
             font-size: 1.3em;
             font-weight: bold;
-            color: var(--habitat-button-text);
+            color: #2F4F4F;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .habitat-button:hover {
             transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-            background: var(--habitat-button-hover);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            background: linear-gradient(145deg, #87CEEB, #4682B4);
         }
 
         .info-display {
-            background: var(--info-bg);
+            background: rgba(255, 255, 255, 0.8);
             border-radius: 15px;
             padding: 25px;
             margin-top: 20px;
-            border-left: 5px solid var(--info-border);
+            border-left: 5px solid #32CD32;
             font-size: 1.2em;
             line-height: 1.6;
             display: none;
             animation: fadeIn 0.5s ease;
-            color: var(--text-color);
         }
 
         @keyframes fadeIn {
@@ -269,15 +133,15 @@
         }
 
         .examples {
-            background: var(--examples-bg);
+            background: rgba(255, 248, 220, 0.9);
             border-radius: 10px;
             padding: 15px;
             margin-top: 15px;
-            border: 2px solid var(--examples-border);
+            border: 2px solid #FFD700;
         }
 
         .examples h4 {
-            color: var(--examples-heading);
+            color: #FF8C00;
             margin-bottom: 10px;
         }
 
@@ -288,19 +152,18 @@
         }
 
         .animal-tag {
-            background: var(--tag-bg);
+            background: #FFE4B5;
             padding: 5px 12px;
             border-radius: 20px;
             font-size: 0.9em;
-            border: 1px solid var(--tag-border);
+            border: 1px solid #DEB887;
             cursor: pointer;
             transition: all 0.3s ease;
             user-select: none;
-            color: var(--text-color);
         }
 
         .animal-tag:hover {
-            background: var(--tag-hover);
+            background: #FFD700;
             transform: scale(1.1);
             box-shadow: 0 3px 10px rgba(255, 215, 0, 0.4);
         }
@@ -310,7 +173,7 @@
         }
 
         .reset-button {
-            background: var(--reset-button-bg);
+            background: linear-gradient(145deg, #FF69B4, #FF1493);
             border: none;
             border-radius: 25px;
             padding: 15px 30px;
@@ -321,80 +184,21 @@
             margin: 20px auto;
             display: block;
             transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
         .reset-button:hover {
             transform: scale(1.1);
-            box-shadow: 0 8px 20px rgba(255, 20, 147, 0.4);
-        }
-
-        /* Effets spéciaux pour le mode sombre */
-        [data-theme="dark"] .section {
-            box-shadow: 0 8px 25px rgba(0,0,0,0.4), 0 0 20px rgba(100, 255, 218, 0.1);
-        }
-
-        [data-theme="dark"] h1 {
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5), 0 0 20px rgba(100, 255, 218, 0.3);
-        }
-
-        [data-theme="dark"] .animal-button:hover,
-        [data-theme="dark"] .habitat-button:hover {
-            box-shadow: 0 8px 25px rgba(0,0,0,0.4), 0 0 15px rgba(100, 255, 218, 0.2);
-        }
-
-        /* Animations spéciales */
-        .theme-transition {
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 5px 15px rgba(255, 20, 147, 0.4);
         }
 
         @media (max-width: 768px) {
             h1 { font-size: 2em; }
             .section h2 { font-size: 2em; }
             .animal-button, .habitat-button { font-size: 1.1em; padding: 15px; }
-            
-            .theme-toggle {
-                position: fixed;
-                bottom: 20px;
-                left: 20px;
-                top: auto;
-                padding: 8px 12px;
-            }
-            
-            .theme-toggle-label {
-                font-size: 0.8em;
-            }
-            
-            .switch {
-                width: 50px;
-                height: 25px;
-            }
-            
-            .slider:before {
-                height: 18px;
-                width: 18px;
-                left: 3px;
-                bottom: 3px;
-            }
-            
-            input:checked + .slider:before {
-                transform: translateX(25px);
-            }
         }
     </style>
 </head>
-<body class="theme-transition">
-    <!-- Toggle Mode Sombre -->
-    <div class="theme-toggle">
-        <span class="theme-icon">☀️</span>
-        <span class="theme-toggle-label">Mode</span>
-        <label class="switch">
-            <input type="checkbox" id="themeToggle">
-            <span class="slider"></span>
-        </label>
-        <span class="theme-icon">🌙</span>
-    </div>
-
+<body>
     <div class="container">
         <h1>🐾 Découvre le Monde des Animaux 🐾</h1>
         
@@ -639,32 +443,6 @@
     </div>
 
     <script>
-        // Gestion du thème
-        let currentTheme = 'light';
-
-        function toggleTheme() {
-            const body = document.body;
-            const toggle = document.getElementById('themeToggle');
-            
-            if (currentTheme === 'light') {
-                body.setAttribute('data-theme', 'dark');
-                currentTheme = 'dark';
-                toggle.checked = true;
-                speakText("Mode sombre activé ! Parfait pour découvrir les animaux nocturnes !");
-            } else {
-                body.removeAttribute('data-theme');
-                currentTheme = 'light';
-                toggle.checked = false;
-                speakText("Mode clair activé ! Idéal pour explorer le monde coloré des animaux !");
-            }
-        }
-
-        // Initialisation du toggle
-        document.addEventListener('DOMContentLoaded', function() {
-            const toggle = document.getElementById('themeToggle');
-            toggle.addEventListener('change', toggleTheme);
-        });
-
         // Données sur les régimes alimentaires
         const dietData = {
             herbivore: {
@@ -711,6 +489,390 @@
                     {name: "Raton laveur 🦝", audio: "Le raton laveur lave sa nourriture ! Il mange des fruits et des petits animaux."}
                 ],
                 audio: "Les omnivores mangent de tout : des plantes et des animaux ! Ils ont des dents variées pour manger différents types d'aliments."
+            }
+        };
+
+        // Données sur les records
+        const recordData = {
+            plusgrand: {
+                title: "📏 Les Plus Grands Champions",
+                description: "Ces animaux battent tous les records de taille ! Ils sont si grands qu'on a du mal à y croire.",
+                examples: [
+                    {name: "Baleine bleue 🐋", audio: "La baleine bleue est l'animal le plus grand qui ait jamais existé ! Plus grande que les dinosaures, elle fait 30 mètres."},
+                    {name: "Girafe 🦒", audio: "La girafe est l'animal terrestre le plus haut ! Elle peut mesurer 6 mètres, comme deux étages d'une maison."},
+                    {name: "Éléphant d'Afrique 🐘", audio: "L'éléphant d'Afrique est le plus gros animal terrestre ! Il peut peser autant que 4 voitures."},
+                    {name: "Calamar géant 🦑", audio: "Le calamar géant a les plus gros yeux ! Ils sont grands comme des assiettes pour voir dans les profondeurs."},
+                    {name: "Albatros 🦅", audio: "L'albatros a la plus grande envergure ! Ses ailes déployées font 3,5 mètres d'une extrémité à l'autre."},
+                    {name: "Araignée Goliath 🕷️", audio: "L'araignée Goliath est énorme ! Elle peut attraper des petits oiseaux avec ses pattes velues."},
+                    {name: "Anaconda 🐍", audio: "L'anaconda est le serpent le plus lourd ! Il peut peser 250 kilos et écraser ses proies."},
+                    {name: "Méduse crinière de lion 🪼", audio: "Cette méduse a les plus longs tentacules ! Ils peuvent mesurer 30 mètres, plus qu'une baleine."}
+                ],
+                audio: "Ces champions de la taille nous montrent que la nature peut créer des géants extraordinaires !"
+            },
+            plusfort: {
+                title: "💪 Les Plus Forts de la Nature",
+                description: "Ces animaux ont une force incroyable ! Ils peuvent porter ou pousser des poids énormes.",
+                examples: [
+                    {name: "Scarabée rhinocéros 🪲", audio: "Le scarabée rhinocéros peut porter 850 fois son poids ! C'est comme si tu portais 6 éléphants !"},
+                    {name: "Fourmi 🐜", audio: "La fourmi peut porter 50 fois son poids ! Elle travaille en équipe pour déplacer des objets énormes."},
+                    {name: "Gorille 🦍", audio: "Le gorille est 20 fois plus fort qu'un humain ! Ses bras musclés peuvent soulever 2 tonnes."},
+                    {name: "Aigle 🦅", audio: "L'aigle peut emporter des proies de 15 kilos ! Ses serres sont plus puissantes qu'un étau."},
+                    {name: "Anaconda 🐍", audio: "L'anaconda serre si fort qu'il peut casser les os ! Sa force d'étreinte est terrifiante."},
+                    {name: "Orque 🐋", audio: "L'orque peut projeter un phoque à 6 mètres de haut ! Sa force dans l'eau est phénoménale."},
+                    {name: "Crabe cocotier 🦀", audio: "Le crabe cocotier casse les noix de coco ! Ses pinces sont assez fortes pour couper un doigt."},
+                    {name: "Bousier 🪲", audio: "Le bousier pousse 1000 fois son poids ! C'est l'animal le plus fort du monde proportionnellement."}
+                ],
+                audio: "Ces animaux super forts nous montrent que la taille ne fait pas tout ! Même les petits peuvent être très puissants."
+            },
+            plusintelligent: {
+                title: "🧠 Les Génies du Monde Animal",
+                description: "Ces animaux sont très intelligents ! Ils résolvent des problèmes, utilisent des outils et ont de la mémoire.",
+                examples: [
+                    {name: "Dauphin 🐬", audio: "Le dauphin se reconnaît dans un miroir ! Il a conscience de lui-même et joue avec son reflet."},
+                    {name: "Chimpanzé 🐵", audio: "Le chimpanzé utilise des outils ! Il fabrique des baguettes pour pêcher les termites."},
+                    {name: "Éléphant 🐘", audio: "L'éléphant n'oublie jamais ! Il se souvient des amis et des dangers pendant toute sa vie."},
+                    {name: "Corbeau 🐦‍⬛", audio: "Le corbeau résout des énigmes ! Il peut utiliser plusieurs outils pour obtenir sa nourriture."},
+                    {name: "Pieuvre 🐙", audio: "La pieuvre sort des labyrinthes ! Elle a 8 cerveaux indépendants dans ses tentacules."},
+                    {name: "Perroquet gris 🦜", audio: "Le perroquet gris compte et comprend ! Il peut apprendre plus de 1000 mots et les utiliser correctement."},
+                    {name: "Porc 🐷", audio: "Le porc joue aux jeux vidéo ! Il apprend plus vite que les chiens et comprend son nom."},
+                    {name: "Rat 🐭", audio: "Le rat apprend des tours complexes ! Il peut naviguer dans des labyrinthes et retenir le chemin."}
+                ],
+                audio: "Ces animaux intelligents nous surprennent ! Ils pensent, réfléchissent et apprennent comme nous."
+            },
+            plusvieux: {
+                title: "👴 Les Anciens Vénérables",
+                description: "Ces animaux vivent très très longtemps ! Certains étaient déjà là avant tes arrière-grands-parents.",
+                examples: [
+                    {name: "Tortue géante 🐢", audio: "La tortue géante vit plus de 200 ans ! Certaines ont connu Napoléon et vivent encore aujourd'hui."},
+                    {name: "Baleine boréale 🐋", audio: "La baleine boréale peut vivre 200 ans ! On a trouvé des harpons de 1880 dans leur corps."},
+                    {name: "Requin du Groenland 🦈", audio: "Ce requin vit 400 ans ! Ceux qui nagent aujourd'hui étaient là avant la découverte de l'Amérique."},
+                    {name: "Palourde d'Islande 🐚", audio: "Cette palourde a vécu 507 ans ! Elle était plus vieille que Shakespeare quand on l'a trouvée."},
+                    {name: "Éponge géante 🧽", audio: "L'éponge géante vit des milliers d'années ! Certaines sont plus vieilles que les pyramides."},
+                    {name: "Carpe koï 🐟", audio: "La carpe koï vit plus de 200 ans ! Elle peut vivre dans le même bassin pendant des générations."},
+                    {name: "Tuatara 🦎", audio: "Le tuatara vit 150 ans ! C'est un reptile qui a connu les dinosaures et n'a pas changé."},
+                    {name: "Perroquet 🦜", audio: "Le perroquet vit 100 ans ! Il peut apprendre et retenir des mots pendant toute sa longue vie."}
+                ],
+                audio: "Ces animaux anciens sont les bibliothèques vivantes de la nature ! Ils ont vu l'histoire se dérouler."
+            }
+        };
+
+        // Données sur le sommeil
+        const sleepData = {
+            debout: {
+                title: "🦒 Les Dormeurs Debout",
+                description: "Ces animaux dorment debout ! Ils ont des astuces spéciales pour ne pas tomber pendant leur sommeil.",
+                examples: [
+                    {name: "Cheval 🐎", audio: "Le cheval bloque ses articulations ! Il peut dormir debout grâce à un système de verrouillage naturel."},
+                    {name: "Girafe 🦒", audio: "La girafe dort seulement 2 heures par jour ! Elle fait de petites siestes debout pour surveiller les dangers."},
+                    {name: "Éléphant 🐘", audio: "L'éléphant s'appuie contre un arbre ! Il dort debout en se servant de l'arbre comme oreiller."},
+                    {name: "Flamant rose 🦩", audio: "Le flamant rose dort sur une patte ! Il cache l'autre patte dans ses plumes pour la tenir au chaud."},
+                    {name: "Vache 🐄", audio: "La vache rumine en dormant ! Elle mâche même pendant ses rêves debout dans le pré."},
+                    {name: "Zèbre 🦓", audio: "Le zèbre garde un œil ouvert ! Dans la savane, il faut toujours surveiller les prédateurs."},
+                    {name: "Albatros 🦅", audio: "L'albatros vole en dormant ! Il plane sur les courants d'air pendant que son cerveau se repose."},
+                    {name: "Cerf 🦌", audio: "Le cerf fait des micro-siestes ! Il dort quelques minutes debout entre deux vigilances."}
+                ],
+                audio: "Dormir debout permet de fuir rapidement ! Ces animaux sont toujours prêts à échapper aux dangers."
+            },
+            suspendu: {
+                title: "🦇 Les Dormeurs Suspendus",
+                description: "Ces animaux dorment en se suspendant ! Ils trouvent ça plus confortable que nous notre lit.",
+                examples: [
+                    {name: "Chauve-souris 🦇", audio: "La chauve-souris dort la tête en bas ! Ses griffes se bloquent automatiquement sur la branche."},
+                    {name: "Singe araignée 🐒", audio: "Le singe araignée se suspend par la queue ! Sa queue préhensile est comme une cinquième main."},
+                    {name: "Paresseux 🦥", audio: "Le paresseux dort suspendu aux branches ! Il peut dormir 20 heures par jour dans cette position."},
+                    {name: "Opossum 🐭", audio: "L'opossum se suspend par la queue ! Il fait semblant d'être mort quand il a peur."},
+                    {name: "Koala 🐨", audio: "Le koala dort dans la fourche des branches ! Il dort 22 heures par jour accroché à son eucalyptus."},
+                    {name: "Caméléon 🦎", audio: "Le caméléon s'accroche avec ses pattes ! Il dort en changeant de couleur selon ses rêves."},
+                    {name: "Écureuil volant 🐿️", audio: "L'écureuil volant dort dans les arbres creux ! Il se suspend aux parois avec ses griffes acérées."},
+                    {name: "Loutre de mer 🦦", audio: "La loutre de mer flotte sur le dos ! Elle s'accroche aux algues pour ne pas dériver."}
+                ],
+                audio: "Se suspendre pour dormir évite les prédateurs terrestres ! C'est une cachette sûre dans les arbres."
+            },
+            hibernation: {
+                title: "🐻 Les Grands Dormeurs",
+                description: "Ces animaux hibernent ! Ils dorment tout l'hiver quand il fait froid et qu'il n'y a pas de nourriture.",
+                examples: [
+                    {name: "Ours 🐻", audio: "L'ours hiberne dans sa tanière ! Il ne mange pas pendant 6 mois et vit sur ses réserves de graisse."},
+                    {name: "Marmotte 🦫", audio: "La marmotte dort 6 mois ! Son cœur bat seulement 5 fois par minute au lieu de 200."},
+                    {name: "Hérisson 🦔", audio: "Le hérisson se roule en boule ! Il hiberne sous un tas de feuilles dans le jardin."},
+                    {name: "Chauve-souris 🦇", audio: "La chauve-souris hiberne dans les grottes ! Sa température corporelle baisse presque à zéro."},
+                    {name: "Écureuil 🐿️", audio: "L'écureuil cache des provisions ! Il se réveille parfois pour manger ses réserves de noisettes."},
+                    {name: "Grenouille 🐸", audio: "La grenouille hiberne dans la vase ! Elle respire par la peau au fond de l'étang gelé."},
+                    {name: "Tortue 🐢", audio: "La tortue s'enterre pour l'hiver ! Elle ralentit tellement qu'elle semble morte."},
+                    {name: "Spermophile 🐭", audio: "Le spermophile fait une super hibernation ! Il peut rester 8 mois sans bouger."}
+                ],
+                audio: "L'hibernation est un sommeil magique ! Ces animaux économisent leur énergie pour survivre à l'hiver."
+            },
+            jamais: {
+                title: "🦈 Ceux Qui Ne Dorment Jamais",
+                description: "Ces animaux ne dorment jamais vraiment ! Ils ont trouvé des astuces pour se reposer autrement.",
+                examples: [
+                    {name: "Requin 🦈", audio: "Le requin doit nager pour respirer ! Il ne peut jamais s'arrêter complètement sinon il meurt."},
+                    {name: "Dauphin 🐬", audio: "Le dauphin dort avec la moitié de son cerveau ! Une moitié veille pendant que l'autre se repose."},
+                    {name: "Orque 🐋", audio: "L'orque fait comme le dauphin ! Elle garde toujours une partie de son cerveau éveillée."},
+                    {name: "Thon 🐟", audio: "Le thon nage sans s'arrêter ! Il doit bouger constamment pour faire passer l'eau sur ses branchies."},
+                    {name: "Abeille 🐝", audio: "L'abeille ouvrière fait des micro-siestes ! Elle dort 30 secondes entre deux tâches dans la ruche."},
+                    {name: "Fourmi 🐜", audio: "La fourmi fait 250 micro-siestes par jour ! Chacune dure seulement 6 secondes."},
+                    {name: "Girafe 🦒", audio: "La girafe dort 30 minutes par jour ! Elle fait de très courtes siestes pour surveiller les lions."},
+                    {name: "Poisson-volant 🐟", audio: "Le poisson-volant migre sans s'arrêter ! Il traverse l'océan en nageant jour et nuit."}
+                ],
+                audio: "Ces animaux ont trouvé des moyens de se reposer sans vraiment dormir ! La nature est pleine d'astuces."
+            }
+        };
+
+        // Données sur les continents
+        const continentData = {
+            afrique: {
+                title: "🦁 Les Animaux d'Afrique",
+                description: "L'Afrique est le continent des grands safari ! On y trouve les plus gros animaux terrestres du monde.",
+                examples: [
+                    {name: "Lion 🦁", audio: "Le lion règne sur la savane africaine ! Il vit en famille et chasse en groupe avec les lionnes."},
+                    {name: "Éléphant d'Afrique 🐘", audio: "L'éléphant d'Afrique a de grandes oreilles ! Elles l'aident à se rafraîchir sous le soleil chaud."},
+                    {name: "Girafe 🦒", audio: "La girafe vit dans les plaines d'Afrique ! Elle mange les feuilles d'acacia que personne ne peut atteindre."},
+                    {name: "Hippopotame 🦛", audio: "L'hippopotame vit dans les rivières africaines ! Il sort la nuit pour manger l'herbe fraîche."},
+                    {name: "Zèbre 🦓", audio: "Le zèbre galope dans la savane ! Ses rayures sont uniques comme nos empreintes digitales."},
+                    {name: "Rhinocéros 🦏", audio: "Le rhinocéros d'Afrique a deux cornes ! Il charge à toute vitesse pour défendre son territoire."},
+                    {name: "Guépard 🐆", audio: "Le guépard court dans les plaines ! C'est l'animal terrestre le plus rapide du monde."},
+                    {name: "Babouin 🐵", audio: "Le babouin vit en troupe en Afrique ! Il a des fesses colorées pour communiquer."}
+                ],
+                audio: "L'Afrique est le berceau des plus grands animaux ! C'est le continent des safaris et des aventures."
+            },
+            asie: {
+                title: "🐼 Les Animaux d'Asie",
+                description: "L'Asie a des animaux très spéciaux ! Des pandas aux tigres, c'est un continent plein de surprises.",
+                examples: [
+                    {name: "Panda géant 🐼", audio: "Le panda vit dans les montagnes chinoises ! Il mange 20 kilos de bambou par jour."},
+                    {name: "Tigre 🐅", audio: "Le tigre chasse dans les jungles d'Asie ! Chaque tigre a des rayures différentes."},
+                    {name: "Éléphant d'Asie 🐘", audio: "L'éléphant d'Asie a des petites oreilles ! Il aide les humains à transporter des troncs d'arbres."},
+                    {name: "Orang-outan 🦧", audio: "L'orang-outan vit dans les arbres ! Il construit un nouveau lit de feuilles chaque soir."},
+                    {name: "Léopard des neiges 🐆", audio: "Le léopard des neiges vit dans l'Himalaya ! Il a d'énormes pattes pour marcher dans la neige."},
+                    {name: "Dragon de Komodo 🦎", audio: "Le dragon de Komodo vit en Indonésie ! C'est le plus gros lézard du monde."},
+                    {name: "Rhinocéros de Java 🦏", audio: "Ce rhinocéros est très rare ! Il ne reste que quelques dizaines d'individus au monde."},
+                    {name: "Macaque japonais 🐵", audio: "Le macaque se baigne dans les sources chaudes ! Il aime l'eau chaude en hiver au Japon."}
+                ],
+                audio: "L'Asie abrite des animaux extraordinaires ! Des géants comme les éléphants aux petits pandas malicieux."
+            },
+            amerique: {
+                title: "🦬 Les Animaux d'Amérique",
+                description: "L'Amérique va du froid arctique à la jungle amazonienne ! Chaque région a ses animaux uniques.",
+                examples: [
+                    {name: "Bison 🦬", audio: "Le bison galopait dans les grandes plaines ! Il y en avait des millions avant l'arrivée des colons."},
+                    {name: "Jaguar 🐆", audio: "Le jaguar règne sur l'Amazonie ! Il nage très bien et chasse même les crocodiles."},
+                    {name: "Ours polaire 🐻‍❄️", audio: "L'ours polaire vit dans l'Arctique canadien ! Il nage des kilomètres entre les icebergs."},
+                    {name: "Condor 🦅", audio: "Le condor plane au-dessus des Andes ! Il peut voler à 7000 mètres d'altitude."},
+                    {name: "Lama 🦙", audio: "Le lama vit dans les montagnes des Andes ! Il transporte les bagages des alpinistes."},
+                    {name: "Alligator 🐊", audio: "L'alligator vit dans les marécages ! Il construit des nids de végétation pour ses œufs."},
+                    {name: "Raton laveur 🦝", audio: "Le raton laveur lave sa nourriture ! Il vit aussi bien en ville que dans la nature."},
+                    {name: "Colibri 🐦", audio: "Le colibri bat des ailes 80 fois par seconde ! Il peut voler en arrière et faire du surplace."}
+                ],
+                audio: "L'Amérique a une incroyable diversité ! Des ours polaires aux jaguars tropicaux."
+            },
+            oceanie: {
+                title: "🦘 Les Animaux d'Océanie",
+                description: "L'Océanie a les animaux les plus bizarres ! Beaucoup n'existent nulle part ailleurs au monde.",
+                examples: [
+                    {name: "Kangourou 🦘", audio: "Le kangourou saute partout en Australie ! Son bébé grandit dans sa poche ventrale."},
+                    {name: "Koala 🐨", audio: "Le koala dort 22 heures par jour ! Il ne mange que des feuilles d'eucalyptus."},
+                    {name: "Ornithorynque 🦆", audio: "L'ornithorynque pond des œufs mais allaite ! C'est l'animal le plus bizarre du monde."},
+                    {name: "Diable de Tasmanie 🐺", audio: "Le diable de Tasmanie a une mâchoire puissante ! Il peut croquer les os les plus durs."},
+                    {name: "Wombat 🐻", audio: "Le wombat fait des crottes carrées ! Il creuse des terriers avec ses griffes puissantes."},
+                    {name: "Casoar 🦆", audio: "Le casoar est un oiseau dangereux ! Il peut donner des coups de pied mortels."},
+                    {name: "Échidné 🦔", audio: "L'échidné pond des œufs et a des épines ! C'est le cousin de l'ornithorynque."},
+                    {name: "Requin-tapis 🦈", audio: "Le requin-tapis se camoufle sur les récifs ! Il ressemble à un tapis de corail."}
+                ],
+                audio: "L'Océanie est le continent des animaux les plus étranges ! Isolée depuis des millions d'années, elle a évolué différemment."
+            }
+        };
+
+        // Données sur les familles d'animaux
+        const familyData = {
+            mammiferes: {
+                title: "🐺 Les Mammifères",
+                description: "Les mammifères ont des poils, donnent naissance à des bébés vivants et les nourrissent avec leur lait ! Ils sont à sang chaud.",
+                examples: [
+                    {name: "Chat 🐱", audio: "Le chat est un mammifère ! Il a des poils doux, des mamelles et nourrit ses chatons avec son lait."},
+                    {name: "Baleine 🐋", audio: "La baleine est un mammifère marin ! Même dans l'eau, elle allaite ses bébés et respire de l'air."},
+                    {name: "Chauve-souris 🦇", audio: "La chauve-souris est le seul mammifère qui vole ! Elle a des poils et donne du lait à ses petits."},
+                    {name: "Ornithorynque 🦆", audio: "L'ornithorynque pond des œufs mais c'est quand même un mammifère ! C'est très rare et spécial."},
+                    {name: "Kangourou 🦘", audio: "Le kangourou porte son bébé dans sa poche ! C'est un mammifère marsupial très original."},
+                    {name: "Éléphant 🐘", audio: "L'éléphant est le plus gros mammifère terrestre ! Il prend soin de ses petits en famille."},
+                    {name: "Dauphin 🐬", audio: "Le dauphin est un mammifère très intelligent ! Il joue, communique et vit en groupe."},
+                    {name: "Singe 🐒", audio: "Le singe nous ressemble ! C'est notre cousin mammifère le plus proche."}
+                ],
+                audio: "Les mammifères sont des animaux à sang chaud ! Ils ont des poils, respirent avec des poumons et nourrissent leurs bébés avec du lait."
+            },
+            reptiles: {
+                title: "🐍 Les Reptiles",
+                description: "Les reptiles ont des écailles, pondent des œufs et sont à sang froid ! Ils adorent se chauffer au soleil.",
+                examples: [
+                    {name: "Serpent 🐍", audio: "Le serpent n'a pas de pattes ! Il rampe avec ses écailles et peut avaler des proies très grosses."},
+                    {name: "Crocodile 🐊", audio: "Le crocodile est un reptile aquatique ! Il a vécu avec les dinosaures et n'a presque pas changé."},
+                    {name: "Tortue 🐢", audio: "La tortue porte sa carapace ! C'est sa maison et sa protection contre les dangers."},
+                    {name: "Lézard 🦎", audio: "Le lézard peut faire repousser sa queue ! Il se chauffe au soleil pour avoir de l'énergie."},
+                    {name: "Caméléon 🦎", audio: "Le caméléon change de couleur ! Il a des yeux qui bougent indépendamment l'un de l'autre."},
+                    {name: "Iguane 🦎", audio: "L'iguane a une crête sur le dos ! Il peut vivre très longtemps, plus de 20 ans."},
+                    {name: "Gecko 🦎", audio: "Le gecko marche au plafond ! Ses pattes ont des millions de petits poils collants."},
+                    {name: "Dragon de Komodo 🦎", audio: "Le dragon de Komodo est le plus gros lézard ! Il peut mesurer 3 mètres de long."}
+                ],
+                audio: "Les reptiles ont des écailles et pondent des œufs ! Ils aiment se chauffer au soleil car ils sont à sang froid."
+            },
+            insectes: {
+                title: "🐛 Les Insectes",
+                description: "Les insectes ont 6 pattes, souvent des ailes et un corps en 3 parties ! Il y en a plus que tous les autres animaux réunis.",
+                examples: [
+                    {name: "Abeille 🐝", audio: "L'abeille a 6 pattes et fait du miel ! Elle pollinise les fleurs et vit en colonie organisée."},
+                    {name: "Papillon 🦋", audio: "Le papillon était d'abord une chenille ! Il se transforme complètement dans son cocon."},
+                    {name: "Fourmi 🐜", audio: "La fourmi peut porter 50 fois son poids ! Elle vit en société très organisée avec une reine."},
+                    {name: "Coccinelle 🐞", audio: "La coccinelle mange les pucerons ! Elle est l'amie des jardiniers et porte bonheur."},
+                    {name: "Libellule 🪲", audio: "La libellule a 4 ailes transparentes ! Elle vit d'abord sous l'eau puis dans les airs."},
+                    {name: "Grillon 🦗", audio: "Le grillon chante avec ses ailes ! Il fait de la musique pour attirer sa compagne."},
+                    {name: "Scarabée 🪲", audio: "Le scarabée est très fort ! Certains peuvent pousser des objets 1000 fois plus lourds qu'eux."},
+                    {name: "Sauterelle 🦗", audio: "La sauterelle saute très haut ! Ses pattes arrière sont comme des ressorts puissants."}
+                ],
+                audio: "Les insectes ont 6 pattes et un corps en 3 parties ! Ce sont les animaux les plus nombreux sur Terre."
+            },
+            poissons: {
+                title: "🐟 Les Poissons",
+                description: "Les poissons vivent dans l'eau, respirent avec des branchies et ont des nageoires ! Leur corps est fait pour nager.",
+                examples: [
+                    {name: "Poisson clown 🐠", audio: "Le poisson clown vit dans les anémones ! Il est protégé par leur venin et les nourrit en échange."},
+                    {name: "Requin 🦈", audio: "Le requin a un squelette en cartilage ! Il doit nager constamment pour respirer."},
+                    {name: "Poisson volant 🐟", audio: "Le poisson volant peut planer hors de l'eau ! Il échappe aux prédateurs en sautant."},
+                    {name: "Hippocampe 🐠", audio: "L'hippocampe nage debout ! C'est le papa qui porte les œufs dans sa poche ventrale."},
+                    {name: "Poisson-globe 🐡", audio: "Le poisson-globe se gonfle comme un ballon ! Il devient tout rond pour faire peur."},
+                    {name: "Raie 🐠", audio: "La raie nage en ondulant ! Elle ressemble à un tapis magique qui vole sous l'eau."},
+                    {name: "Thon 🐟", audio: "Le thon nage très vite ! Il peut traverser tout l'océan en migrant."},
+                    {name: "Poisson-ange 🐟", audio: "Le poisson-ange a de belles couleurs ! Il nettoie les autres poissons dans les récifs."}
+                ],
+                audio: "Les poissons respirent sous l'eau avec leurs branchies ! Leurs nageoires les aident à nager dans toutes les directions."
+            }
+        };
+
+        // Données sur les habitats spéciaux
+        const specialHabitatData = {
+            desert: {
+                title: "🏜️ Les Animaux du Désert",
+                description: "Le désert est très chaud le jour et froid la nuit ! Les animaux ont des astuces pour économiser l'eau.",
+                examples: [
+                    {name: "Chameau 🐪", audio: "Le chameau stocke l'eau dans son corps ! Il peut boire 100 litres d'eau en 10 minutes."},
+                    {name: "Fennec 🦊", audio: "Le fennec a de grandes oreilles ! Elles l'aident à évacuer la chaleur du désert."},
+                    {name: "Scorpion 🦂", audio: "Le scorpion sort la nuit ! Il évite la chaleur du jour et chasse dans le sable frais."},
+                    {name: "Gecko du désert 🦎", audio: "Le gecko du désert stocke l'eau dans sa queue ! Il lèche la rosée du matin sur les rochers."},
+                    {name: "Cactus wren 🐦", audio: "Ce petit oiseau fait son nid dans les cactus ! Les épines le protègent des prédateurs."},
+                    {name: "Vipère du désert 🐍", audio: "La vipère s'enfouit dans le sable ! Elle attend que ses proies passent au-dessus d'elle."},
+                    {name: "Suricate 🦔", audio: "Le suricate vit en groupe ! Un garde surveille les dangers pendant que les autres mangent."},
+                    {name: "Addax 🦌", audio: "L'addax n'a presque jamais besoin de boire ! Il tire toute son eau de la nourriture qu'il mange."}
+                ],
+                audio: "Les animaux du désert ont appris à vivre sans beaucoup d'eau ! Ils sont actifs la nuit quand il fait plus frais."
+            },
+            banquise: {
+                title: "🧊 Les Animaux de la Banquise",
+                description: "Il fait très froid sur la banquise ! Les animaux ont une fourrure épaisse ou de la graisse pour se protéger.",
+                examples: [
+                    {name: "Ours polaire 🐻‍❄️", audio: "L'ours polaire a une fourrure creuse ! Chaque poil est comme un petit tube qui isole du froid."},
+                    {name: "Pingouin 🐧", audio: "Les pingouins se serrent en groupe ! Ils tournent pour que chacun soit au chaud à tour de rôle."},
+                    {name: "Phoque 🦭", audio: "Le phoque a une épaisse couche de graisse ! Elle le protège du froid glacial de l'océan."},
+                    {name: "Renard arctique 🦊", audio: "Le renard arctique change de couleur ! Il est blanc l'hiver et brun l'été pour se camoufler."},
+                    {name: "Morse 🦭", audio: "Le morse utilise ses défenses ! Il les plante dans la glace pour sortir de l'eau glacée."},
+                    {name: "Baleine boréale 🐋", audio: "La baleine boréale brise la glace ! Elle peut vivre plus de 200 ans dans l'Arctique."},
+                    {name: "Lemming 🐭", audio: "Le lemming creuse des tunnels sous la neige ! Il reste au chaud dans son monde souterrain."},
+                    {name: "Narval 🦄", audio: "Le narval a une dent qui pousse très longue ! On l'appelle la licorne des mers."}
+                ],
+                audio: "Les animaux de la banquise ont de la fourrure épaisse ou de la graisse ! Ils partagent leur chaleur en groupe."
+            },
+            montagne: {
+                title: "⛰️ Les Animaux de la Montagne",
+                description: "En montagne, l'air est plus rare et il fait froid ! Les animaux ont des poumons puissants et du sang spécial.",
+                examples: [
+                    {name: "Aigle royal 🦅", audio: "L'aigle royal plane au-dessus des sommets ! Il utilise les courants d'air pour voler sans effort."},
+                    {name: "Bouquetin 🐐", audio: "Le bouquetin grimpe sur les rochers ! Ses sabots sont comme des chaussures d'escalade."},
+                    {name: "Lama 🦙", audio: "Le lama a du sang spécial ! Il transporte plus d'oxygène pour vivre en altitude."},
+                    {name: "Panda roux 🐾", audio: "Le panda roux vit dans les bambous des montagnes ! Il a une queue rayée comme un raton laveur."},
+                    {name: "Léopard des neiges 🐆", audio: "Le léopard des neiges a d'énormes pattes ! Elles lui servent de raquettes dans la neige."},
+                    {name: "Yak 🐂", audio: "Le yak a une fourrure très longue ! Elle le protège des tempêtes de neige en montagne."},
+                    {name: "Marmotte 🦫", audio: "La marmotte siffle pour prévenir ! Elle alerte sa famille quand un danger approche."},
+                    {name: "Condor 🦅", audio: "Le condor a les plus grandes ailes ! Il peut planer des heures sans battre des ailes."}
+                ],
+                audio: "Les animaux de montagne ont des poumons puissants ! Ils respirent l'air rare des hautes altitudes."
+            },
+            savane: {
+                title: "🌾 Les Animaux de la Savane",
+                description: "La savane a des herbes hautes et quelques arbres ! Il fait chaud et il y a une saison sèche et une saison des pluies.",
+                examples: [
+                    {name: "Lion 🦁", audio: "Le lion chasse en groupe dans la savane ! Les lionnes travaillent ensemble pour attraper les proies."},
+                    {name: "Girafe 🦒", audio: "La girafe mange les feuilles des acacias ! Son long cou lui donne accès à la nourriture en hauteur."},
+                    {name: "Zèbre 🦓", audio: "Le zèbre vit en troupeau ! Ses rayures confondent les prédateurs quand ils courent ensemble."},
+                    {name: "Éléphant 🐘", audio: "L'éléphant creuse des points d'eau ! Il aide tous les animaux de la savane à boire."},
+                    {name: "Guépard 🐆", audio: "Le guépard court dans les plaines ! Il a besoin d'espace pour utiliser sa vitesse fantastique."},
+                    {name: "Hippopotame 🦛", audio: "L'hippopotame vit près des rivières ! Il sort la nuit pour brouter l'herbe de la savane."},
+                    {name: "Hyène 🐺", audio: "La hyène nettoie la savane ! Elle mange les restes et empêche les maladies de se propager."},
+                    {name: "Baobab tree 🌳", audio: "Le baobab stocke l'eau dans son tronc ! Les animaux grattent son écorce pour boire."}
+                ],
+                audio: "La savane est comme une grande prairie ! Les animaux migrent pour suivre les pluies et l'herbe fraîche."
+            }
+        };
+
+        // Données sur les super pouvoirs
+        const powerData = {
+            camouflage: {
+                title: "🎭 Les Maîtres du Camouflage",
+                description: "Ces animaux sont des champions du déguisement ! Ils se rendent invisibles pour chasser ou se cacher.",
+                examples: [
+                    {name: "Caméléon 🦎", audio: "Le caméléon change de couleur en quelques secondes ! Il peut devenir vert, marron, rouge ou bleu."},
+                    {name: "Pieuvre 🐙", audio: "La pieuvre imite les rochers et les algues ! Elle change de texture et de couleur instantanément."},
+                    {name: "Phasme 🦗", audio: "Le phasme ressemble à une branche ! Il reste immobile des heures pour ne pas être vu."},
+                    {name: "Poisson-feuille 🐟", audio: "Le poisson-feuille imite une feuille morte ! Il dérive dans l'eau sans bouger."},
+                    {name: "Gecko satanique 🦎", audio: "Le gecko satanique ressemble à une feuille ! Même sa queue imite une feuille sèche."},
+                    {name: "Chouette 🦉", audio: "La chouette se confond avec l'écorce ! Ses plumes imitent parfaitement les arbres."},
+                    {name: "Sole 🐟", audio: "La sole se cache dans le sable ! Elle change de couleur pour imiter le fond marin."},
+                    {name: "Mante religieuse 🦗", audio: "La mante religieuse imite les fleurs ! Les insectes viennent à elle sans se méfier."}
+                ],
+                audio: "Le camouflage est un super pouvoir magique ! Ces animaux deviennent invisibles comme des ninjas de la nature."
+            },
+            regeneration: {
+                title: "🔄 Les Champions de la Régénération",
+                description: "Ces animaux peuvent faire repousser des parties de leur corps ! C'est comme avoir des pouvoirs magiques de guérison.",
+                examples: [
+                    {name: "Étoile de mer ⭐", audio: "L'étoile de mer peut faire repousser ses bras ! Si elle en perd un, il repousse complètement."},
+                    {name: "Lézard 🦎", audio: "Le lézard fait repousser sa queue ! Si un prédateur l'attrape, elle se détache et repousse plus tard."},
+                    {name: "Salamandre 🦎", audio: "La salamandre fait repousser ses pattes ! Elle peut même régénérer une partie de son cœur."},
+                    {name: "Crabe 🦀", audio: "Le crabe fait repousser ses pinces ! S'il perd une pince, elle repousse en quelques mois."},
+                    {name: "Axolotl 🦎", audio: "L'axolotl peut régénérer presque tout ! Même son cerveau et son cœur peuvent repousser."},
+                    {name: "Concombre de mer 🥒", audio: "Le concombre de mer recrache ses organes ! Puis il les fait repousser comme neufs."},
+                    {name: "Hydre 🪼", audio: "L'hydre d'eau douce peut se régénérer entièrement ! Même coupée en morceaux, chaque bout redevient une hydre."},
+                    {name: "Ver de terre 🪱", audio: "Le ver de terre peut survivre coupé en deux ! Chaque moitié peut parfois redevenir un ver entier."}
+                ],
+                audio: "La régénération est un pouvoir fantastique ! Ces animaux peuvent réparer leur corps comme par magie."
+            },
+            sonar: {
+                title: "📡 Les Experts en Navigation",
+                description: "Ces animaux ont des systèmes de navigation extraordinaires ! Ils se repèrent mieux qu'un GPS.",
+                examples: [
+                    {name: "Chauve-souris 🦇", audio: "La chauve-souris utilise l'écholocation ! Elle crie et écoute l'écho pour 'voir' dans le noir."},
+                    {name: "Dauphin 🐬", audio: "Le dauphin a un sonar naturel ! Il envoie des clics et reçoit des images sonores."},
+                    {name: "Orque 🐋", audio: "L'orque chasse avec son sonar ! Elle peut voir à travers le corps des poissons."},
+                    {name: "Pigeon 🐦", audio: "Le pigeon a une boussole dans le bec ! Il sent le champ magnétique terrestre pour s'orienter."},
+                    {name: "Saumon 🐟", audio: "Le saumon retrouve sa rivière natale ! Il se souvient de l'odeur de l'eau où il est né."},
+                    {name: "Tortue marine 🐢", audio: "La tortue marine navigue avec les étoiles ! Elle traverse l'océan pour retrouver sa plage."},
+                    {name: "Abeille 🐝", audio: "L'abeille danse pour donner des directions ! Elle indique où se trouvent les meilleures fleurs."},
+                    {name: "Requin 🦈", audio: "Le requin détecte les champs électriques ! Il sent les battements de cœur de ses proies."}
+                ],
+                audio: "Ces animaux ont des sens extraordinaires ! Ils naviguent mieux que nos meilleurs instruments."
+            },
+            venin: {
+                title: "⚡ Les Experts en Défense",
+                description: "Ces animaux ont des moyens de défense incroyables ! Ils peuvent se protéger de façons surprenantes.",
+                examples: [
+                    {name: "Serpent venimeux 🐍", audio: "Le serpent venimeux injecte son poison ! Une seule morsure peut paralyser sa proie."},
+                    {name: "Grenouille poison 🐸", audio: "La grenouille poison a la peau toxique ! Ses couleurs vives préviennent : danger, ne me mange pas !"},
+                    {name: "Méduse 🪼", audio: "La méduse pique avec ses tentacules ! Elle injecte du venin pour paralyser ses proies."},
+                    {name: "Scorpion 🦂", audio: "Le scorpion pique avec sa queue ! Son venin est stocké dans le dard au bout de sa queue."},
+                    {name: "Pieuvre à anneaux bleus 🐙", audio: "Cette pieuvre minuscule est très dangereuse ! Ses anneaux bleus brillent quand elle est en colère."},
+                    {name: "Poisson-pierre 🐟", audio: "Le poisson-pierre ressemble à un rocher ! Il a des épines venimeuses sur le dos."},
+                    {name: "Mygale 🕷️", audio: "La mygale a des crochets à venin ! Elle paralyse ses proies avant de les manger."},
+                    {name: "Ornithorynque 🦆", audio: "Le mâle ornithorynque a un éperon venimeux ! C'est le seul mammifère venimeux au monde."}
+                ],
+                audio: "Ces animaux ont des armes chimiques naturelles ! Leur venin les aide à chasser et à se défendre."
             }
         };
 
@@ -778,7 +940,7 @@
             }
         };
 
-        // Ajouter toutes les autres données ici (je vais les ajouter dans les prochaines mises à jour pour garder le code lisible)
+        // Données sur les tailles
         const sizeData = {
             petits: {
                 title: "🐭 Les Petits Animaux",
@@ -787,7 +949,11 @@
                     {name: "Souris 🐭", audio: "La souris est minuscule ! Elle peut se cacher dans un petit trou et mange des miettes."},
                     {name: "Hamster 🐹", audio: "Le hamster est un petit rongeur ! Il range la nourriture dans ses joues."},
                     {name: "Coccinelle 🐞", audio: "La coccinelle est un petit insecte rouge ! Elle mange les pucerons du jardin."},
-                    {name: "Papillon 🦋", audio: "Le papillon est léger comme une plume ! Il vole de fleur en fleur."}
+                    {name: "Papillon 🦋", audio: "Le papillon est léger comme une plume ! Il vole de fleur en fleur."},
+                    {name: "Abeille 🐝", audio: "L'abeille est petite mais travailleuse ! Elle fabrique du miel délicieux."},
+                    {name: "Escargot 🐌", audio: "L'escargot porte sa maison sur son dos ! Il laisse une trace brillante."},
+                    {name: "Grenouille 🐸", audio: "La grenouille tient dans tes mains ! Elle saute très loin malgré sa petite taille."},
+                    {name: "Poisson rouge 🐠", audio: "Le poisson rouge nage dans son bocal ! Il a une mémoire plus longue qu'on le croit."}
                 ],
                 audio: "Les petits animaux sont adorables ! Même s'ils sont minuscules, ils sont très importants dans la nature."
             },
@@ -798,7 +964,11 @@
                     {name: "Chien 🐕", audio: "Le chien est le meilleur ami de l'homme ! Il remue la queue quand il est content."},
                     {name: "Chat 🐱", audio: "Le chat ronronne quand il est heureux ! Il dort 16 heures par jour."},
                     {name: "Lapin 🐰", audio: "Le lapin a de longues oreilles ! Il peut courir très vite en cas de danger."},
-                    {name: "Renard 🦊", audio: "Le renard est rusé et intelligent ! Il a une belle queue touffue."}
+                    {name: "Renard 🦊", audio: "Le renard est rusé et intelligent ! Il a une belle queue touffue."},
+                    {name: "Poule 🐓", audio: "La poule pond des œufs frais ! Elle protège ses poussins sous ses ailes."},
+                    {name: "Canard 🦆", audio: "Le canard a des pattes palmées ! Il flotte sur l'eau comme un petit bateau."},
+                    {name: "Pingouin 🐧", audio: "Le pingouin porte un smoking naturel ! Il glisse sur la glace sur son ventre."},
+                    {name: "Singe 🐒", audio: "Le singe est très agile ! Il se balance de branche en branche dans les arbres."}
                 ],
                 audio: "Les animaux de taille moyenne sont parfaits pour vivre près des humains ! Ils ne sont ni trop grands ni trop petits."
             },
@@ -809,7 +979,11 @@
                     {name: "Éléphant 🐘", audio: "L'éléphant est le plus gros animal terrestre ! Sa trompe peut porter 300 kilos."},
                     {name: "Girafe 🦒", audio: "La girafe est l'animal le plus grand ! Son cou fait 2 mètres de long."},
                     {name: "Hippopotame 🦛", audio: "L'hippopotame peut peser 4 tonnes ! Il court plus vite qu'un humain sur terre."},
-                    {name: "Rhinocéros 🦏", audio: "Le rhinocéros a une corne sur le nez ! Il peut charger à 50 km/h."}
+                    {name: "Rhinocéros 🦏", audio: "Le rhinocéros a une corne sur le nez ! Il peut charger à 50 km/h."},
+                    {name: "Ours polaire 🐻‍❄️", audio: "L'ours polaire est le plus grand carnivore terrestre ! Il nage très bien dans l'eau froide."},
+                    {name: "Lion 🦁", audio: "Le lion peut mesurer 3 mètres ! Son rugissement s'entend à 8 kilomètres."},
+                    {name: "Tigre 🐅", audio: "Le tigre est le plus grand félin ! Il peut sauter 10 mètres en longueur."},
+                    {name: "Chameau 🐪", audio: "Le chameau peut vivre sans boire pendant des semaines ! Ses bosses stockent la graisse."}
                 ],
                 audio: "Les grands animaux sont impressionnants ! Ils sont si gros qu'ils n'ont presque pas de prédateurs."
             },
@@ -820,22 +994,207 @@
                     {name: "Baleine bleue 🐋", audio: "La baleine bleue est le plus grand animal du monde ! Son cœur est gros comme une voiture."},
                     {name: "Requin baleine 🦈", audio: "Le requin baleine est énorme mais gentil ! Il mange seulement du plancton."},
                     {name: "Cachalot 🐋", audio: "Le cachalot peut plonger à 2000 mètres ! Il a le plus gros cerveau du monde animal."},
-                    {name: "Rorqual 🐋", audio: "Le rorqual avale des tonnes d'eau d'un coup ! Il peut mesurer 20 mètres de long."}
+                    {name: "Rorqual 🐋", audio: "Le rorqual avale des tonnes d'eau d'un coup ! Il peut mesurer 20 mètres de long."},
+                    {name: "Orque 🐋", audio: "L'orque est un super prédateur ! Elle chasse en famille et est très intelligente."},
+                    {name: "Raie manta 🐠", audio: "La raie manta peut faire 7 mètres d'envergure ! Elle vole sous l'eau comme un oiseau."},
+                    {name: "Pieuvre géante 🐙", audio: "La pieuvre géante a des tentacules de 10 mètres ! Elle peut changer de couleur instantanément."},
+                    {name: "Calamar géant 🦑", audio: "Le calamar géant a les plus gros yeux du monde ! Ils font la taille d'une assiette."}
                 ],
                 audio: "Les animaux géants sont fascinants ! Ils vivent surtout dans les océans car l'eau les aide à porter leur poids."
             }
         };
 
-        // Ajouter les données manquantes simplifiées pour le reste
-        const speedData = { lents: { title: "🐌 Animaux Lents", description: "Ces animaux prennent leur temps !", examples: [{name: "Escargot 🐌", audio: "L'escargot avance très lentement !"}], audio: "Lentement mais sûrement !" }};
-        const soundData = { ferme: { title: "🐄 Sons de Ferme", description: "Écoute les animaux de la ferme !", examples: [{name: "Vache 🐄", audio: "La vache fait meuh meuh !"}], audio: "Plein de sons différents !" }};
-        const babyData = { mammiferes: { title: "🐶 Bébés Mammifères", description: "Les bébés mammifères sont adorables !", examples: [{name: "Chiot 🐶", audio: "Le bébé chien s'appelle un chiot !"}], audio: "Ils boivent le lait de maman !" }};
-        const familyData = { mammiferes: { title: "🐺 Mammifères", description: "Les mammifères ont des poils !", examples: [{name: "Chat 🐱", audio: "Le chat est un mammifère !"}], audio: "Ils sont à sang chaud !" }};
-        const specialHabitatData = { desert: { title: "🏜️ Désert", description: "Il fait très chaud dans le désert !", examples: [{name: "Chameau 🐪", audio: "Le chameau vit dans le désert !"}], audio: "Ils économisent l'eau !" }};
-        const powerData = { camouflage: { title: "🎭 Camouflage", description: "Ces animaux se cachent très bien !", examples: [{name: "Caméléon 🦎", audio: "Le caméléon change de couleur !"}], audio: "Invisible comme par magie !" }};
-        const recordData = { plusgrand: { title: "📏 Plus Grands", description: "Les champions de la taille !", examples: [{name: "Baleine 🐋", audio: "La baleine est énorme !"}], audio: "Des géants extraordinaires !" }};
-        const sleepData = { debout: { title: "🦒 Dorment Debout", description: "Ces animaux dorment debout !", examples: [{name: "Cheval 🐎", audio: "Le cheval dort debout !"}], audio: "Pour fuir rapidement !" }};
-        const continentData = { afrique: { title: "🦁 Afrique", description: "L'Afrique a de gros animaux !", examples: [{name: "Lion 🦁", audio: "Le lion vit en Afrique !"}], audio: "Le continent des safaris !" }};
+        // Données sur les vitesses
+        const speedData = {
+            lents: {
+                title: "🐌 Les Animaux Lents",
+                description: "Ces animaux prennent leur temps ! Ils bougent très lentement mais sont très patients.",
+                examples: [
+                    {name: "Escargot 🐌", audio: "L'escargot avance à 1 mètre par heure ! Lentement mais sûrement."},
+                    {name: "Tortue 🐢", audio: "La tortue gagne la course contre le lièvre ! Persévérance et patience sont ses forces."},
+                    {name: "Paresseux 🦥", audio: "Le paresseux dort 20 heures par jour ! Il bouge si lentement que des algues poussent sur lui."},
+                    {name: "Koala 🐨", audio: "Le koala mange et dort presque toute la journée ! Il ne boit jamais d'eau."},
+                    {name: "Étoile de mer ⭐", audio: "L'étoile de mer bouge très lentement ! Elle peut faire repousser ses bras."},
+                    {name: "Hippopotame 🦛", audio: "L'hippopotame marche lentement mais court très vite ! Ne te fie pas aux apparences."},
+                    {name: "Éléphant 🐘", audio: "L'éléphant marche tranquillement ! Mais il peut courir à 40 km/h si nécessaire."},
+                    {name: "Panda 🐼", audio: "Le panda mange du bambou toute la journée ! Il prend son temps pour mâcher."}
+                ],
+                audio: "Les animaux lents nous apprennent la patience ! Ils économisent leur énergie et vivent longtemps."
+            },
+            normaux: {
+                title: "🐱 Animaux à Vitesse Normale",
+                description: "Ces animaux bougent à une vitesse normale ! Comme toi quand tu marches ou cours.",
+                examples: [
+                    {name: "Chat 🐱", audio: "Le chat marche silencieusement ! Il peut sprinter à 48 km/h pour attraper ses proies."},
+                    {name: "Chien 🐕", audio: "Le chien court joyeusement ! Sa vitesse dépend de sa race et de sa taille."},
+                    {name: "Poule 🐓", audio: "La poule trottine dans la basse-cour ! Elle peut voler sur de courtes distances."},
+                    {name: "Canard 🦆", audio: "Le canard nage calmement ! Il pagaie avec ses pattes sous l'eau."},
+                    {name: "Lapin 🐰", audio: "Le lapin sautille tranquillement ! Mais il détale très vite en cas de danger."},
+                    {name: "Écureuil 🐿️", audio: "L'écureuil grimpe agilement ! Il saute de branche en branche avec aisance."},
+                    {name: "Hérisson 🦔", audio: "Le hérisson se promène la nuit ! Il se roule en boule quand il a peur."},
+                    {name: "Souris 🐭", audio: "La souris trottine rapidement ! Elle explore son territoire en courant."}
+                ],
+                audio: "Ces animaux ont une vitesse adaptée à leur mode de vie ! Ni trop lents ni trop rapides."
+            },
+            rapides: {
+                title: "🐎 Les Animaux Rapides",
+                description: "Ces animaux courent très vite ! Plus vite qu'une voiture en ville !",
+                examples: [
+                    {name: "Cheval 🐎", audio: "Le cheval galope à 55 km/h ! Ses sabots font un bruit rythmé sur le sol."},
+                    {name: "Zèbre 🦓", audio: "Le zèbre court à 65 km/h ! Ses rayures confondent les prédateurs."},
+                    {name: "Antilope 🦌", audio: "L'antilope bondit à 80 km/h ! Elle fait des sauts spectaculaires."},
+                    {name: "Lièvre 🐇", audio: "Le lièvre court à 72 km/h ! Il zigzague pour échapper aux prédateurs."},
+                    {name: "Autruche 🪶", audio: "L'autruche court à 70 km/h ! C'est l'oiseau qui court le plus vite."},
+                    {name: "Cerf 🦌", audio: "Le cerf bondit à 75 km/h ! Il saute par-dessus les obstacles."},
+                    {name: "Kangourou 🦘", audio: "Le kangourou saute à 60 km/h ! Il utilise sa queue comme balancier."},
+                    {name: "Dauphin 🐬", audio: "Le dauphin nage à 55 km/h ! Il surfe sur les vagues des bateaux."}
+                ],
+                audio: "Les animaux rapides utilisent leur vitesse pour chasser ou échapper aux dangers ! C'est leur super pouvoir."
+            },
+            superrapides: {
+                title: "🐆 Les Animaux Super Rapides",
+                description: "Ces animaux sont les champions de la vitesse ! Plus rapides qu'une voiture sur l'autoroute !",
+                examples: [
+                    {name: "Guépard 🐆", audio: "Le guépard est l'animal terrestre le plus rapide ! Il court à 120 km/h en quelques secondes."},
+                    {name: "Faucon pèlerin 🦅", audio: "Le faucon pèlerin plonge à 390 km/h ! C'est l'animal le plus rapide du monde."},
+                    {name: "Aigle royal 🦅", audio: "L'aigle royal fond sur ses proies à 240 km/h ! Sa vue perçante repère tout."},
+                    {name: "Espadon 🐟", audio: "L'espadon nage à 110 km/h ! Son épée coupe l'eau comme un couteau."},
+                    {name: "Requin mako 🦈", audio: "Le requin mako nage à 100 km/h ! Il peut sauter hors de l'eau."},
+                    {name: "Colibri 🐦", audio: "Le colibri bat des ailes 80 fois par seconde ! Il peut voler en arrière."},
+                    {name: "Libellule 🪲", audio: "La libellule vole à 50 km/h ! Elle peut s'arrêter net en plein vol."},
+                    {name: "Gazelle 🦌", audio: "La gazelle court à 100 km/h ! Elle fait des bonds gracieux en courant."}
+                ],
+                audio: "Les animaux super rapides sont les formules 1 de la nature ! Leur vitesse les aide à survivre."
+            }
+        };
+
+        // Données sur les sons
+        const soundData = {
+            ferme: {
+                title: "🐄 Les Sons de la Ferme",
+                description: "Écoute tous les bruits que font les animaux de la ferme ! Chacun a son cri spécial.",
+                examples: [
+                    {name: "Vache 🐄", audio: "La vache fait MEUH MEUH ! Elle rumine et mâche sa nourriture très longtemps."},
+                    {name: "Cochon 🐷", audio: "Le cochon fait GROIN GROIN ! Il renifle partout avec son groin."},
+                    {name: "Mouton 🐑", audio: "Le mouton fait BÊÊ BÊÊ ! Les agneaux appellent leur maman."},
+                    {name: "Cheval 🐎", audio: "Le cheval fait HIII HIII et BRRRR ! Il souffle aussi par les naseaux."},
+                    {name: "Poule 🐓", audio: "La poule fait COT COT CODEC ! Elle caquette quand elle pond un œuf."},
+                    {name: "Coq 🐓", audio: "Le coq fait COCORICO ! Il chante très fort au lever du soleil."},
+                    {name: "Canard 🦆", audio: "Le canard fait COIN COIN ! Son cri résonne près de la mare."},
+                    {name: "Oie 🪿", audio: "L'oie fait CRA CRA ! Elle crie très fort pour protéger ses petits."}
+                ],
+                audio: "La ferme est pleine de sons différents ! Chaque animal a sa façon de communiquer avec sa famille."
+            },
+            foret: {
+                title: "🦉 Les Sons de la Forêt",
+                description: "La forêt résonne de mille sons ! Les animaux se parlent entre les arbres.",
+                examples: [
+                    {name: "Hibou 🦉", audio: "Le hibou fait HOU HOU dans la nuit ! Il appelle sa compagne sous les étoiles."},
+                    {name: "Loup 🐺", audio: "Le loup fait AHOU AHOU ! Son hurlement porte très loin dans la forêt."},
+                    {name: "Pic-vert 🐦", audio: "Le pic-vert fait TOC TOC TOC ! Il tambourine sur les troncs d'arbres."},
+                    {name: "Coucou 🐦", audio: "Le coucou fait COUCOU COUCOU ! Il pond ses œufs dans d'autres nids."},
+                    {name: "Cerf 🦌", audio: "Le cerf fait RÊÊÊH ! Il brame pour appeler les biches en automne."},
+                    {name: "Écureuil 🐿️", audio: "L'écureuil fait TCHAK TCHAK ! Il grogne quand il défend ses noisettes."},
+                    {name: "Sanglier 🐗", audio: "Le sanglier fait GROUIC GROUIC ! Il fouille la terre avec son groin."},
+                    {name: "Renard 🦊", audio: "Le renard fait WAP WAP ! Son cri ressemble à un aboiement aigu."}
+                ],
+                audio: "La forêt est un orchestre naturel ! Chaque animal ajoute sa mélodie à la symphonie des bois."
+            },
+            jungle: {
+                title: "🦁 Les Sons de la Jungle",
+                description: "La jungle résonne de cris puissants ! Les animaux sauvages ont des voix impressionnantes.",
+                examples: [
+                    {name: "Lion 🦁", audio: "Le lion fait ROAAAR ! Son rugissement s'entend à 8 kilomètres de distance."},
+                    {name: "Tigre 🐅", audio: "Le tigre fait RAHOUUU ! Il gronde pour intimider ses ennemis."},
+                    {name: "Éléphant 🐘", audio: "L'éléphant fait PAWOUUU ! Il barrit avec sa trompe levée vers le ciel."},
+                    {name: "Singe 🐒", audio: "Le singe fait OUH OUH AH AH ! Il crie pour communiquer avec sa troupe."},
+                    {name: "Perroquet 🦜", audio: "Le perroquet répète tout ce qu'il entend ! Il peut imiter la voix humaine."},
+                    {name: "Jaguar 🐆", audio: "Le jaguar fait FEULEMENT ! Il souffle et montre ses crocs menaçants."},
+                    {name: "Toucan 🦆", audio: "Le toucan fait CROA CROA ! Son gros bec coloré l'aide à attraper les fruits."},
+                    {name: "Caméléon 🦎", audio: "Le caméléon est silencieux ! Il change de couleur au lieu de faire du bruit."}
+                ],
+                audio: "La jungle est bruyante jour et nuit ! Les animaux utilisent leurs cris pour marquer leur territoire."
+            },
+            mer: {
+                title: "🐋 Les Sons de la Mer",
+                description: "Sous l'eau aussi, les animaux font du bruit ! Ils chantent et cliquent dans les océans.",
+                examples: [
+                    {name: "Baleine 🐋", audio: "La baleine chante de longues mélodies ! Ses chants voyagent sur des milliers de kilomètres."},
+                    {name: "Dauphin 🐬", audio: "Le dauphin fait CLIC CLIC ! Il utilise son sonar pour naviguer et communiquer."},
+                    {name: "Orque 🐋", audio: "L'orque a un langage complexe ! Chaque famille a son dialecte particulier."},
+                    {name: "Morse 🦭", audio: "Le morse fait BEUGLEMENT ! Il barrit comme un éléphant de mer."},
+                    {name: "Otarie 🦭", audio: "L'otarie fait ARK ARK ! Elle aboie comme un chien sur les rochers."},
+                    {name: "Requin 🦈", audio: "Le requin est silencieux ! Il nage sans bruit pour surprendre ses proies."},
+                    {name: "Crabe 🦀", audio: "Le crabe fait CLIC CLIC ! Il claque ses pinces pour se défendre."},
+                    {name: "Mouette 🐦", audio: "La mouette fait CRII CRII ! Elle crie au-dessus des vagues."}
+                ],
+                audio: "L'océan est plein de sons ! Les animaux marins utilisent le son pour se repérer dans l'eau bleue."
+            }
+        };
+
+        // Données sur les bébés animaux
+        const babyData = {
+            mammiferes: {
+                title: "🐶 Les Bébés Mammifères",
+                description: "Les mammifères donnent naissance à des bébés vivants ! Ils boivent le lait de leur maman.",
+                examples: [
+                    {name: "Chiot 🐶", audio: "Le bébé chien s'appelle un chiot ! Il ouvre les yeux après 2 semaines."},
+                    {name: "Chaton 🐱", audio: "Le bébé chat s'appelle un chaton ! Il ronronne déjà dans le ventre de sa maman."},
+                    {name: "Éléphanteau 🐘", audio: "Le bébé éléphant s'appelle un éléphanteau ! Il pèse déjà 100 kilos à la naissance."},
+                    {name: "Lionceau 🦁", audio: "Le bébé lion s'appelle un lionceau ! Il n'a pas de crinière avant 2 ans."},
+                    {name: "Baleineau 🐋", audio: "Le bébé baleine s'appelle un baleineau ! Il boit 600 litres de lait par jour."},
+                    {name: "Ourson 🐻", audio: "Le bébé ours s'appelle un ourson ! Il naît aveugle et sans poils."},
+                    {name: "Veau 🐄", audio: "Le bébé vache s'appelle un veau ! Il peut marcher dès sa naissance."},
+                    {name: "Poulain 🐎", audio: "Le bébé cheval s'appelle un poulain ! Il galope déjà après quelques heures."}
+                ],
+                audio: "Les bébés mammifères naissent vivants ! Ils tètent le lait de leur maman pour grandir."
+            },
+            oiseaux: {
+                title: "🐣 Les Bébés Oiseaux",
+                description: "Les oiseaux sortent d'un œuf ! Papa et maman les nourrissent dans le nid.",
+                examples: [
+                    {name: "Poussin 🐣", audio: "Le bébé poule s'appelle un poussin ! Il casse sa coquille avec son bec."},
+                    {name: "Caneton 🐥", audio: "Le bébé canard s'appelle un caneton ! Il suit sa maman partout en file indienne."},
+                    {name: "Oisillon 🐦", audio: "Le bébé oiseau s'appelle un oisillon ! Ses parents lui apportent des vers."},
+                    {name: "Aiglon 🦅", audio: "Le bébé aigle s'appelle un aiglon ! Il apprend à voler en sautant du nid."},
+                    {name: "Hibou 🦉", audio: "Le bébé hibou s'appelle aussi un hibou ! Il fait des petits hou hou mignons."},
+                    {name: "Flamant 🦩", audio: "Le bébé flamant naît gris ! Il devient rose en mangeant des crevettes."},
+                    {name: "Cygne 🦢", audio: "Le bébé cygne s'appelle un cygneau ! Il monte sur le dos de ses parents."},
+                    {name: "Pingouin 🐧", audio: "Le bébé pingouin reste au chaud entre les pattes de papa ! Il a un duvet tout doux."}
+                ],
+                audio: "Les bébés oiseaux éclosent d'un œuf ! Leurs parents les nourrissent jusqu'à ce qu'ils sachent voler."
+            },
+            aquatiques: {
+                title: "🐠 Les Bébés Aquatiques",
+                description: "Les animaux aquatiques ont des bébés très spéciaux ! Certains pondent des œufs, d'autres pas.",
+                examples: [
+                    {name: "Alevin 🐟", audio: "Le bébé poisson s'appelle un alevin ! Il sort d'un œuf transparent."},
+                    {name: "Bébé dauphin 🐬", audio: "Le bébé dauphin naît la queue en premier ! Il nage immédiatement avec maman."},
+                    {name: "Têtard 🐸", audio: "Le bébé grenouille s'appelle un têtard ! Il a une queue et respire sous l'eau."},
+                    {name: "Bébé tortue 🐢", audio: "Le bébé tortue court vers la mer ! Il doit éviter les oiseaux sur la plage."},
+                    {name: "Bébé phoque 🦭", audio: "Le bébé phoque s'appelle un blanchon ! Il a un pelage blanc tout doux."},
+                    {name: "Bébé requin 🦈", audio: "Le bébé requin nage seul dès sa naissance ! Il sait déjà chasser."},
+                    {name: "Bébé pieuvre 🐙", audio: "Le bébé pieuvre est minuscule ! Il flotte dans l'eau comme du plancton."},
+                    {name: "Alevins d'hippocampe 🐠", audio: "Les bébés hippocampes sortent de la poche de papa ! C'est le mâle qui porte les œufs."}
+                ],
+                audio: "Les bébés aquatiques grandissent dans l'eau ! Certains changent complètement de forme en grandissant."
+            },
+            ferme: {
+                title: "🐥 Les Bébés de la Ferme",
+                description: "À la ferme, il y a plein de bébés animaux ! Ils sont très mignons et suivent leur maman.",
+                examples: [
+                    {name: "Poulain 🐎", audio: "Le bébé cheval s'appelle un poulain ! Il se lève sur ses pattes une heure après sa naissance."},
+                    {name: "Veau 🐄", audio: "Le bébé vache s'appelle un veau ! Il boit 8 litres de lait par jour."},
+                    {name: "Agneau 🐑", audio: "Le bébé mouton s'appelle un agneau ! Il reconnaît sa maman à sa voix."},
+                    {name: "Chevrier 🐐", audio: "Le bébé chèvre s'appelle un chevreau ! Il saute et grimpe dès ses premiers jours."},
+                    {name: "Porcelet 🐷", audio: "Le bébé cochon s'appelle un porcelet ! Il naît avec des petites dents."},
+                    {name: "Caneton 🦆", audio: "Le bébé canard s'appelle un caneton ! Il nage instinctivement dès qu'il voit l'eau."},
+                    {name: "Oison 🪿", audio: "Le bébé oie s'appelle un oison ! Il suit ses parents en file indienne."},
+                    {name: "Lapereau 🐰", audio: "Le bébé lapin s'appelle un lapereau ! Il naît aveugle et sans poils."}
+                ],
+                audio: "Les bébés de la ferme grandissent près des humains ! Le fermier prend soin d'eux avec leurs parents."
+            }
+        };
 
         function speakAnimal(animalData) {
             speakText(animalData.audio);
@@ -875,20 +1234,209 @@
             displayDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
 
-        function showHabitatInfo(type) { showGenericInfo('habitat-info', habitatData[type]); }
-        function showSizeInfo(type) { showGenericInfo('size-info', sizeData[type]); }
-        function showSpeedInfo(type) { showGenericInfo('speed-info', speedData[type] || speedData.lents); }
-        function showSoundInfo(type) { showGenericInfo('sound-info', soundData[type] || soundData.ferme); }
-        function showBabyInfo(type) { showGenericInfo('baby-info', babyData[type] || babyData.mammiferes); }
-        function showFamilyInfo(type) { showGenericInfo('family-info', familyData[type] || familyData.mammiferes); }
-        function showSpecialHabitatInfo(type) { showGenericInfo('special-habitat-info', specialHabitatData[type] || specialHabitatData.desert); }
-        function showPowerInfo(type) { showGenericInfo('power-info', powerData[type] || powerData.camouflage); }
-        function showRecordInfo(type) { showGenericInfo('record-info', recordData[type] || recordData.plusgrand); }
-        function showSleepInfo(type) { showGenericInfo('sleep-info', sleepData[type] || sleepData.debout); }
-        function showContinentInfo(type) { showGenericInfo('continent-info', continentData[type] || continentData.afrique); }
+        function showHabitatInfo(type) {
+            const info = habitatData[type];
+            const displayDiv = document.getElementById('habitat-info');
+            
+            displayDiv.innerHTML = `
+                <h3>${info.title}</h3>
+                <p>${info.description}</p>
+                <div class="examples">
+                    <h4>🌟 Exemples d'animaux (clique pour écouter) :</h4>
+                    <div class="animal-list">
+                        ${info.examples.map(animal => `<span class="animal-tag" onclick="speakAnimal({audio: '${animal.audio.replace(/'/g, "\\'")}'})">${animal.name}</span>`).join('')}
+                    </div>
+                </div>
+            `;
+            
+            displayDiv.style.display = 'block';
+            speakText(info.audio);
+            displayDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
 
-        function showGenericInfo(elementId, info) {
-            const displayDiv = document.getElementById(elementId);
+        function showSizeInfo(type) {
+            const info = sizeData[type];
+            const displayDiv = document.getElementById('size-info');
+            
+            displayDiv.innerHTML = `
+                <h3>${info.title}</h3>
+                <p>${info.description}</p>
+                <div class="examples">
+                    <h4>🌟 Exemples d'animaux (clique pour écouter) :</h4>
+                    <div class="animal-list">
+                        ${info.examples.map(animal => `<span class="animal-tag" onclick="speakAnimal({audio: '${animal.audio.replace(/'/g, "\\'")}'})">${animal.name}</span>`).join('')}
+                    </div>
+                </div>
+            `;
+            
+            displayDiv.style.display = 'block';
+            speakText(info.audio);
+            displayDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        function showSpeedInfo(type) {
+            const info = speedData[type];
+            const displayDiv = document.getElementById('speed-info');
+            
+            displayDiv.innerHTML = `
+                <h3>${info.title}</h3>
+                <p>${info.description}</p>
+                <div class="examples">
+                    <h4>🌟 Exemples d'animaux (clique pour écouter) :</h4>
+                    <div class="animal-list">
+                        ${info.examples.map(animal => `<span class="animal-tag" onclick="speakAnimal({audio: '${animal.audio.replace(/'/g, "\\'")}'})">${animal.name}</span>`).join('')}
+                    </div>
+                </div>
+            `;
+            
+            displayDiv.style.display = 'block';
+            speakText(info.audio);
+            displayDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        function showSoundInfo(type) {
+            const info = soundData[type];
+            const displayDiv = document.getElementById('sound-info');
+            
+            displayDiv.innerHTML = `
+                <h3>${info.title}</h3>
+                <p>${info.description}</p>
+                <div class="examples">
+                    <h4>🌟 Exemples d'animaux (clique pour écouter) :</h4>
+                    <div class="animal-list">
+                        ${info.examples.map(animal => `<span class="animal-tag" onclick="speakAnimal({audio: '${animal.audio.replace(/'/g, "\\'")}'})">${animal.name}</span>`).join('')}
+                    </div>
+                </div>
+            `;
+            
+            displayDiv.style.display = 'block';
+            speakText(info.audio);
+            displayDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        function showBabyInfo(type) {
+            const info = babyData[type];
+            const displayDiv = document.getElementById('baby-info');
+            
+            displayDiv.innerHTML = `
+                <h3>${info.title}</h3>
+                <p>${info.description}</p>
+                <div class="examples">
+                    <h4>🌟 Exemples de bébés (clique pour écouter) :</h4>
+                    <div class="animal-list">
+                        ${info.examples.map(animal => `<span class="animal-tag" onclick="speakAnimal({audio: '${animal.audio.replace(/'/g, "\\'")}'})">${animal.name}</span>`).join('')}
+                    </div>
+                </div>
+            `;
+            
+            displayDiv.style.display = 'block';
+            speakText(info.audio);
+            displayDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        function showFamilyInfo(type) {
+            const info = familyData[type];
+            const displayDiv = document.getElementById('family-info');
+            
+            displayDiv.innerHTML = `
+                <h3>${info.title}</h3>
+                <p>${info.description}</p>
+                <div class="examples">
+                    <h4>🌟 Exemples d'animaux (clique pour écouter) :</h4>
+                    <div class="animal-list">
+                        ${info.examples.map(animal => `<span class="animal-tag" onclick="speakAnimal({audio: '${animal.audio.replace(/'/g, "\\'")}'})">${animal.name}</span>`).join('')}
+                    </div>
+                </div>
+            `;
+            
+            displayDiv.style.display = 'block';
+            speakText(info.audio);
+            displayDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        function showSpecialHabitatInfo(type) {
+            const info = specialHabitatData[type];
+            const displayDiv = document.getElementById('special-habitat-info');
+            
+            displayDiv.innerHTML = `
+                <h3>${info.title}</h3>
+                <p>${info.description}</p>
+                <div class="examples">
+                    <h4>🌟 Exemples d'animaux (clique pour écouter) :</h4>
+                    <div class="animal-list">
+                        ${info.examples.map(animal => `<span class="animal-tag" onclick="speakAnimal({audio: '${animal.audio.replace(/'/g, "\\'")}'})">${animal.name}</span>`).join('')}
+                    </div>
+                </div>
+            `;
+            
+            displayDiv.style.display = 'block';
+            speakText(info.audio);
+            displayDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        function showPowerInfo(type) {
+            const info = powerData[type];
+            const displayDiv = document.getElementById('power-info');
+            
+            displayDiv.innerHTML = `
+                <h3>${info.title}</h3>
+                <p>${info.description}</p>
+                <div class="examples">
+                    <h4>🌟 Exemples d'animaux (clique pour écouter) :</h4>
+                    <div class="animal-list">
+                        ${info.examples.map(animal => `<span class="animal-tag" onclick="speakAnimal({audio: '${animal.audio.replace(/'/g, "\\'")}'})">${animal.name}</span>`).join('')}
+                    </div>
+                </div>
+            `;
+            
+            displayDiv.style.display = 'block';
+            speakText(info.audio);
+            displayDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        function showRecordInfo(type) {
+            const info = recordData[type];
+            const displayDiv = document.getElementById('record-info');
+            
+            displayDiv.innerHTML = `
+                <h3>${info.title}</h3>
+                <p>${info.description}</p>
+                <div class="examples">
+                    <h4>🌟 Exemples d'animaux (clique pour écouter) :</h4>
+                    <div class="animal-list">
+                        ${info.examples.map(animal => `<span class="animal-tag" onclick="speakAnimal({audio: '${animal.audio.replace(/'/g, "\\'")}'})">${animal.name}</span>`).join('')}
+                    </div>
+                </div>
+            `;
+            
+            displayDiv.style.display = 'block';
+            speakText(info.audio);
+            displayDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        function showSleepInfo(type) {
+            const info = sleepData[type];
+            const displayDiv = document.getElementById('sleep-info');
+            
+            displayDiv.innerHTML = `
+                <h3>${info.title}</h3>
+                <p>${info.description}</p>
+                <div class="examples">
+                    <h4>🌟 Exemples d'animaux (clique pour écouter) :</h4>
+                    <div class="animal-list">
+                        ${info.examples.map(animal => `<span class="animal-tag" onclick="speakAnimal({audio: '${animal.audio.replace(/'/g, "\\'")}'})">${animal.name}</span>`).join('')}
+                    </div>
+                </div>
+            `;
+            
+            displayDiv.style.display = 'block';
+            speakText(info.audio);
+            displayDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        function showContinentInfo(type) {
+            const info = continentData[type];
+            const displayDiv = document.getElementById('continent-info');
             
             displayDiv.innerHTML = `
                 <h3>${info.title}</h3>
@@ -907,21 +1455,28 @@
         }
 
         function resetAll() {
-            const infoDisplays = ['diet-info', 'habitat-info', 'size-info', 'speed-info', 'sound-info', 'baby-info', 'family-info', 'special-habitat-info', 'power-info', 'record-info', 'sleep-info', 'continent-info'];
-            infoDisplays.forEach(id => {
-                const element = document.getElementById(id);
-                if (element) element.style.display = 'none';
-            });
+            document.getElementById('diet-info').style.display = 'none';
+            document.getElementById('habitat-info').style.display = 'none';
+            document.getElementById('size-info').style.display = 'none';
+            document.getElementById('speed-info').style.display = 'none';
+            document.getElementById('sound-info').style.display = 'none';
+            document.getElementById('baby-info').style.display = 'none';
+            document.getElementById('family-info').style.display = 'none';
+            document.getElementById('special-habitat-info').style.display = 'none';
+            document.getElementById('power-info').style.display = 'none';
+            document.getElementById('record-info').style.display = 'none';
+            document.getElementById('sleep-info').style.display = 'none';
+            document.getElementById('continent-info').style.display = 'none';
             speechSynthesis.cancel();
             
             setTimeout(() => {
-                speakText(`Bravo ! Tu as découvert tellement de secrets sur les animaux ! ${currentTheme === 'dark' ? 'Le mode sombre est parfait pour les animaux nocturnes !' : 'Le mode clair illumine le monde des animaux !'} Continue à explorer !`);
+                speakText("Bravo ! Tu as découvert tellement de secrets sur les animaux ! Tu peux maintenant explorer toutes les sections : leur nourriture, leur habitat, leur taille, leur vitesse, leurs cris, leurs bébés, leurs familles, leurs super pouvoirs, leurs records, comment ils dorment et sur quels continents ils vivent ! Clique partout pour en apprendre encore plus !");
             }, 500);
         }
 
         window.addEventListener('load', function() {
             setTimeout(() => {
-                speakText("Bienvenue dans l'univers extraordinaire des animaux ! Découvre aussi le mode sombre en haut à gauche pour une expérience nocturne ! Clique sur tous les boutons colorés pour explorer !");
+                speakText("Bienvenue dans l'univers extraordinaire des animaux ! Tu vas découvrir ce qu'ils mangent, où ils vivent, leur taille, leur vitesse, leurs cris, leurs bébés, leurs familles, leurs habitats spéciaux, leurs super pouvoirs, leurs records du monde, comment ils dorment et sur quels continents ils habitent ! C'est une aventure fantastique qui t'attend ! Clique sur tous les boutons colorés pour explorer !");
             }, 1000);
         });
     </script>
